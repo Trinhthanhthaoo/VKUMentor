@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+}
+
+.wrapp {
+  width: 100%; 
+  max-width: 700px; 
+  margin: 30px auto;
+  padding: 0 10px; 
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container .form-group {
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 10px; 
+}
+
+.form-group .label {
+  font-weight: bold; 
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  width: 100%; 
+}
+
+.footer {
+  text-align: center; 
+  margin-top: 20px;
+}
+
+.footer button {
+  padding: 10px;
+  width: 100%; 
+  background-color: rgba(246, 62, 62, 0.5); 
+}
+
+.tttt-1024-form-group {
+  margin-bottom: -20px;
+}
+
+.tttt-1024-form-group > .form-group {
+  margin-bottom: 10px;
+}
+
+.tttt-1024-form-group .label {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 900px) {
+  .tttt-1024-form-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .tttt-1024-form-group .form-group {
+      width: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  .form-group {
+      flex-direction: column; 
+      display: block;
+  }
+
+  .form-group input,
+  .form-group select {
+      width: 100%; 
+      margin-left: 0;
+  }
+}
+
+.image-input {
+    text-align: center;
+}
+
+.image-input input {
+    display: none;
+}
+
+.image-input label {
+    display: block;
+    color: #FFF;
+    background: #5c95b8;
+    padding: .3rem .6rem;
+    font-size: 115%;
+    cursor: pointer;
+}
+
+.image-input label i {
+    font-size: 125%;
+    margin-right: .3rem;
+}
+
+.image-input label:hover i {
+    animation: shake .35s;
+}
+
+.image-input img {
+    max-width: 175px;
+    display: none;
+}
+
+.image-input span {
+    display: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjusted to fill the viewport height */
+    font-family: Calibri, sans-serif; /* Added fallback font */
+}

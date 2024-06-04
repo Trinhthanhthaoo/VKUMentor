@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .background .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .background .head .img {
+  width: 150px;
+  height: 150px;
+}
+
+.container .background .head .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .background .button_container .login-register {
+  display: flex;
+  align-items: center;
+  margin-bottom: -70px;
+  margin-right: 32px;
+}
+.login {
+  margin-right: 8px;
+}
+
+.register {
+  margin-left: 32px;
+}
+
+.login,
+.register {
+  padding: 1rem 2rem;
+  background-color: rgb(111, 111, 231); /* Sử dụng giá trị RGB */
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+
+.login:hover,
+.register:hover {
+  background-color: #0056b3;
+}
+
+.container .background .button_container .login-register {
+  display: flex;
+  align-items: center;
+}
+.Content {
+  margin: 0 32px;
+  line-height: 1.6;
+  color: whitesmoke;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-family: monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+.container .background .button_container .login-register button {
+  margin-left: 10px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -80px;
+}
+
+.container .background .Content {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.container .Instruct {
+  margin-top: 40px;
+}
+
+.DangKy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DangKyMentor button,
+.Instruct button {
+  padding: 1.5rem 2.5rem;
+  background-color: #ffff;
+  color: red;
+  border: 2px solid black;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.DangKyMentor {
+  margin-left: 130px;
+}
+hr {
+  position: relative;
+  border: none;
+  height: 1px;
+  background-color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+hr::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.DangKyMentor button:hover,
+.Instruct button:hover {
+  background-color: #0056b3;
+}
