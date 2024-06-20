@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Ký Mentor</title>
+    <link rel="stylesheet" href="assets/css/DangKy.css" />
+    <link rel="icon" type="image/x-icon" href="assets/img/mentor.png" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapp">
+      <div class="header">
+        <div class="subject">
+          <h3>Đăng ký làm Mentor</h3>
+        </div>
+        <div class="title">
+          <p>
+            Cảm ơn bạn đã đồng hành trở thành Mentor để cùng VKUMentor giúp đỡ
+            nhiều sinh viên của VKU thành công hơn.<br />
+            VKUMentor sẽ liên hệ với bạn qua email hoặc số điện thoại bạn cung
+            cấp để tạo profile mentor và hướng dẫn các bước tham gia.<br />
+            Hãy nhớ kiểm tra cả thư rác (SPAM) để tránh bỏ lỡ các thông báo từ
+            VKUMentor!
+          </p>
+        </div>
+      </div>
+
+      <form action="index.php" method="POST">
+        <div class="container">
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Họ và Tên</div>
+              <input type="text" placeholder="Nhập Họ và Tên" required />
+            </div>
+            <div class="form-group">
+              <div class="label">Danh xưng</div>
+              <select name="DanhXung" required>
+                <option>Anh</option>
+                <option>Chị</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Công việc/Vị trí</div>
+              <input
+                type="text"
+                placeholder="Nhập công việc của bạn"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <div class="label">Công ty/Tổ chức</div>
+              <input type="text" placeholder="Nhập tên công ty" required />
+            </div>
+          </div>
+
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Email</div>
+              <input type="email" placeholder="example@gmail.com" required />
+            </div>
+
+            <div class="form-group">
+              <div class="label">Số điện thoại</div>
+              <input
+                type="number"
+                placeholder="Nhập số điện thoại"
+                min="0"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Link Facebook</div>
+              <input
+                type="url"
+                placeholder="https://facebook.com/yourprofile"
+              />
+            </div>
+
+            <div class="form-group">
+              <div class="label">Zalo</div>
+              <input type="phone" placeholder="Nhập số Zalo của bạn" />
+            </div>
+          </div>
+
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Chuyên môn</div>
+              <input
+                type="text"
+                placeholder="Nhập chuyên môn của bạn"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <div class="label">Tổ chức</div>
+              <input type="text" placeholder="Nhập tên tổ chức" />
+            </div>
+          </div>
+
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Địa điểm</div>
+              <input type="text" placeholder="Nhập địa điểm của bạn" />
+            </div>
+
+            <div class="form-group">
+              <div class="label">Link LinkedIn</div>
+              <input
+                type="url"
+                placeholder="https://linkedin.com/yourprofile"
+              />
+            </div>
+          </div>
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Upload ảnh chân dung</div>
+              <div class="image-input">
+                <input type="file" accept="image/*" id="imageInput" />
+                <label for="imageInput" class="image-button"
+                  ><i class="far fa-image"></i> Choose image</label
+                >
+                <img src="" class="image-preview" id="imagePreview" />
+                <span class="change-image" id="changeImage"
+                  >Choose different image</span
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="label">CV</div>
+              <div class="image-input">
+                <input type="file" accept="application/pdf" id="cvInput" />
+                <label for="cvInput" class="image-button"
+                  ><i class="far fa-image"></i> Choose CV</label
+                >
+                <img src="" class="image-preview" id="cvPreview" />
+                <span class="change-image" id="changeCV"
+                  >Choose different CV</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="tttt-1024-form-group">
+            <div class="form-group">
+              <div class="label">Bạn biết VKUMentor qua</div>
+              <input type="text" placeholder="Bạn biết VKUMentor qua ai?" />
+            </div>
+
+            <div class="form-group">
+              <div class="label">Câu hỏi góp ý</div>
+              <input type="text" placeholder="Bạn có câu hỏi hoặc góp ý nào?" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="label">Một số thành tựu</div>
+            <input type="text" />
+          </div>
+
+          <div class="footer">
+            <button type="submit">Hoàn thành</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#imageInput").on("change", function () {
+          let $input = $(this);
+          if ($input.val().length > 0) {
+            let fileReader = new FileReader();
+            fileReader.onload = function (data) {
+              $("#imagePreview")
+                .attr("src", data.target.result)
+                .css("display", "block");
+            };
+            fileReader.readAsDataURL($input.prop("files")[0]);
+            $input.siblings(".image-button").css("display", "none");
+            $input.siblings(".change-image").css("display", "block");
+          }
+        });
+
+        $("#changeImage").on("click", function () {
+          let $control = $(this);
+          $("#imageInput").val("");
+          $("#imagePreview").attr("src", "").css("display", "none");
+          $control.css("display", "none");
+          $control.siblings(".image-button").css("display", "block");
+        });
+
+        // Add similar functionality for CV if needed
+        $("#cvInput").on("change", function () {
+          let $input = $(this);
+          if ($input.val().length > 0) {
+            // Handle CV file preview if needed
+          }
+        });
+
+        $("#changeCV").on("click", function () {
+          let $control = $(this);
+          $("#cvInput").val("");
+          // Handle reset for CV file preview if needed
+          $control.css("display", "none");
+          $control.siblings(".image-button").css("display", "block");
+        });
+      });
+    </script>
+  </body>
+</html>
