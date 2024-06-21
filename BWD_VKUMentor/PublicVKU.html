@@ -6,6 +6,7 @@
     <title>Trang chủ</title>
     <link rel="stylesheet" href="./assets/css/public.css">
     <link rel="stylesheet" src="./trangchu.js">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/img/mentor.png">
 
@@ -106,13 +107,18 @@
                          </div>
                             <div class="card-container">
                                 <!-- Các thẻ card ở đây -->
+
+                                <div class="test-fill-card"></div>
+
                                  <div class="card">
                                     <img src="assets/img/C++.jpg" alt="Delicious Food">
                                     <div class="card-content">
                                         <h2>C++ cơ bản</h2>
                                         <p> Cung cấp hướng dẫn chi tiết về ngôn ngữ lập trình này và các nguyên tắc thiết kế phần mềm.</p>
-                                        <a href="#">KinhNguyen <i class="fa-solid fa-user"></i></a>
-                                       
+                                        <div style="display: flex; align-items: center; flex-direction: row-reverse; justify-content: space-between; margin-top: 20px;">
+                                          <a href="#">KinhNguyen <i class="fa-solid fa-user"></i></a>
+                                          <span>05-10-2024</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card">
@@ -540,4 +546,5 @@
 <script src='https://cdn.jsdelivr.net/gh/thietkeblogspot/js/contact-buttons-widget.min.js'></script>
 <script src="./Javascript/public.js"></script>
 <script src="./Javascript/js.js"></script>
+<script src="./Javascript/api.js"></script>
 </html>
