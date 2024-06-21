@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mental Health Survey Form</title>
+        <link rel="stylesheet" href="assets/css/FormDanhGia.css">
+    </head>
+    <body>
+        <h1 id="title">Đánh Giá VKUMentor</h1>
+        <p id="description"><em>Xin chào bạn, hãy điền vào form đánh giá của VKUMentor nhé!</em></p>
+        <form id="survey-form">
+            <!--basic info-->
+            <fieldset class="width">
+                <label id="name-label">Họ và Tên <input class="width" id="name" type="name" placeholder="Nhập họ và Tên" required></label>
+                <label id="email-label">Email <input class="width" id="email" type="email" placeholder="example@hotmail.com" required></label>
+                <label id="number-label">Số điện thoại <input class="width" id="number" type="number" min="10" max="10" placeholder="Nhập số điện thoại" required></label>
+            </fieldset>
+            <hr class="width">
+            <!--select question-->
+            <fieldset class="width">
+                <label>
+                  <legend>Bạn đang học ở khoa nào</legend>
+                  <select id="dropdown" class="width" required>
+                    <option value="">(choose one)</option>
+                    <option value="1">Khoa học máy tính</option>
+                    <option value="2">Kinh tế số</option>
+                    <option value="3">Kỹ thuật máy tính</option>
+                  </select>
+                </label>
+            </fieldset>
+            <hr class="width">
+            <!--radio question-->
+            <fieldset class="width">
+              <legend>
+Bạn có hài lòng với VKUMentor không?</legend>
+              <label for="yes"><input type="radio" value="yes" name="personal" class="inline width" checked> Có </label>
+              <label for="no"><input type="radio" value="no" name="personal" class="inline width"> Không </label>
+              <label for="unsure"><input type="radio" value="unsure" name="personal" class="inline width"> Bỏ qua </label>    
+            </fieldset>
+            <hr class="width">
+            <!--radio question-->
+            <fieldset class="width">
+              <legend>
+Bạn có thấy cải thiện hơn khi tự học ở VKUMentor không?</legend>
+              <label for="yes"><input type="radio" value="yes" name="other-people" class="inline width" checked> Có </label>
+              <label for="no"><input type="radio" value="no" name="other-people" class="inline width"> Không </label>
+              <label for="dont-know"><input type="radio" value="dont-know" name="other-people" class="inline width"> Cũng tạm </label>    
+            </fieldset>
+            <hr class="width">
+            <!--radio question-->
+            <fieldset class="width">
+                <legend>
+Bạn nhận xét các Mentor ở VKU như thế nào?</legend>
+              <label for="weekly"><input type="radio" value="weekly" name="therapist" class="inline width" checked> Hài lòng </label>
+              <label for="monthly"><input type="radio" value="monthly" name="therapist" class="inline width"> Rất hài lòng</label>
+              <label for="few-times"><input type="radio" value="few-times" name="therapist" class="inline width">Phân vân </label>
+              <label for="never"><input type="radio" value="never" name="therapist" class="inline width"> Không hài lòng </label>  
+              <label for="sonever"><input type="radio" value="never" name="therapist" class="inline width"> Rất không hài lòng </label>    
+  
+            </fieldset>
+            <hr class="width">
+            <!--radio question-->
+            <fieldset class="width">
+              <legend>Bạn có thích tham gia các cuộc thi VKUMentor tổ chức không?</legend>
+              <label for="definitely"><input type="radio" value="definitely" name="informed" class="inline width" checked> Rất thích</label>
+              <label for="somewhat"><input type="radio" value="somewhat" name="informed" class="inline width"> Không thích lắm</label>
+              <label for="basic-concepts"><input type="radio" value="basic-concepts" name="informed" class="inline width"> Không quan tâm</label>
+            </fieldset>
+            <hr class="width">
+            <!--checkbox question-->
+            <fieldset class="chkbox width">
+                <legend>Những hoạt động bạn muốn VKUMentor tổ chức thêm </legend>
+                <label id="chk" for="specialized"><input type="checkbox" class="inline width" id="specialized" value="specialized"> Tạo thêm nhiều cuộc thi lập trình</label>
+                <label id="chk" for="social-net"><input type="checkbox" class="inline width" id="social-net" value="social-net"> Đăng nhiều tài liệu hơn</label>
+                <label id="chk" for="online-support"><input type="checkbox" class="inline width" id="online-support" value="online-support"> Thêm nhiều Mentor hơn cho nhiều môn</label>
+                <label id="chk" for="proffesionals"><input type="checkbox" class="inline width" id="proffesionals" value="proffesionals">Tạo ra nhiều cuộc thi khởi nghiệp</label>
+                <label id="chk" for="youtube"><input type="checkbox" class="inline width" id="youtube" value="youtube">
+Cài đặt thời gian biểu cho mỗi sinh viên</label>
+                <label id="chk" for="other-resources"><input type="checkbox" class="inline width" id="other-resources" value="other-resources"> Others</label> <input class="inline width" id="other-resources" placeholder="Which others?">
+            </fieldset>
+            <hr class="width">
+            <!--textarea question-->
+            <fieldset class="width">
+                <legend>Một số góp ý từ bạn</legend>
+                <label>
+                    <textarea class="width" id="area" placeholder="Hãy nhập những góp ý mà bạn muốn VKUMentor cập nhật thêm...Cảm ơn bạn!" row="3" cols="30"></textarea>
+                </label>
+            </fieldset>
+            <button id="submit" type="submit" class="width" />Gửi</button>
+        </form>
+    </body>
+</html>
