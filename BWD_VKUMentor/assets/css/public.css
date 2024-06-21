@@ -301,13 +301,22 @@ main {
 }
 .card a {
   text-decoration: none;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   right: 0;
-  margin-right: 8px;
-  margin-bottom: 8px;
+  /* margin-right: 8px;
+  margin-bottom: 8px; */
   color: black;
 }
+
+.card p {
+   overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 .card a:hover {
   text-decoration: underline;
 }
@@ -323,11 +332,22 @@ main {
 
 .card-content {
   padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-content h2 {
   margin-top: 0;
   font-size: 1.5rem;
+
+
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 .card-content p {
   color: #555;

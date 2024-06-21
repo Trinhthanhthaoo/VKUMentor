@@ -285,6 +285,10 @@
   border-radius: 25px;
   margin-bottom: 32px;
 }
+.hoptac:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 /* footer  */
 .copyright {
   display: inline;
