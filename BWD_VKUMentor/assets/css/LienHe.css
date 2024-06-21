@@ -2,10 +2,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 .html {
   margin: 0px;
-  padding: 0;
 }
 @font-face {
   font-family: fontBWD;
@@ -14,7 +19,7 @@
 /* header  */
 .navbar li {
   list-style: none;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 .navbar a {
   text-decoration: none;
@@ -174,121 +179,6 @@
   }
 }
 /* end header  */
-#content {
-  font-family: fontBWD;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding-top: 118px;
-  line-height: 1.8;
-  justify-content: center;
-}
-.content--donvi {
-  border: 5px solid #29aafe;
-  border-radius: 20px;
-  margin-right: 32px;
-  width: 400px;
-}
-.content--donvi--title {
-  color: #1882ec;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.hinhAnh {
-  display: flex;
-}
-.gopanh {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.hinhAnh li {
-  list-style: none;
-  text-align: center;
-  padding: 28px;
-  color: #97bade;
-}
-.content--img {
-  width: 128px;
-}
-.img {
-  display: block;
-  width: 100px;
-}
-.right-section {
-  border-radius: 20px;
-  border: 5px solid #97bade;
-  margin-bottom: 32px;
-  margin-left: 32px;
-  width: 500px;
-}
-.right-section--title {
-  margin-bottom: 54px;
-  color: #1882ec;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.user-detail {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.form-group {
-  width: calc(100% / 2 -20px);
-  margin-bottom: 16px;
-}
-.details {
-  margin-bottom: 5px;
-  display: block;
-  text-transform: uppercase;
-  color: #97bade;
-  margin-left: 32px;
-}
-.form-group input {
-  height: 32px;
-  width: 100%;
-  outline: none;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  font-size: 18px;
-  padding: 0px 8px;
-}
-.reason {
-  margin-bottom: 5px;
-  display: block;
-  text-transform: uppercase;
-  color: #97bade;
-  margin-left: 31px;
-}
-#lydo {
-  height: 300px;
-  width: 450px;
-  margin: 0px 32px;
-}
-.form-group::placeholder {
-}
-.hoptac {
-  border: none;
-  margin: 0px 64px;
-  background-color: #97bade;
-  color: whitesmoke;
-  text-transform: uppercase;
-  font-size: 28px;
-  font-family: fontBWD;
-  padding: 8px 32px;
-  border-radius: 25px;
-  margin-bottom: 32px;
-}
-.hoptac:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
 /* footer  */
 .copyright {
   display: inline;
@@ -380,97 +270,14 @@
   margin: 8px 0px;
 }
 @media (min-width: 740px) and (max-width: 1023px) {
-  /* content  */
-  #content {
-    display: block;
-    margin: 0 32px;
-  }
-  .content--donvi {
-    width: 100%;
-    margin-top: 32px;
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-  }
-  .gopanh {
-    display: flex;
-    flex-direction: row;
-  }
-  .right-section {
-    display: block;
-    width: 100%;
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-    margin-top: 32px;
-  }
-  .user-detail {
-    justify-content: space-around;
-  }
-  #lydo {
-    width: 500px;
-    padding: 32px;
-  }
-  /* end content  */
-  /* footer  */
   #site-footer [class^="col-"] {
     margin-bottom: 30px;
-    padding: 0px 8px;
   }
   .logo-img {
     width: 330px;
   }
-  /* end footer  */
 }
 @media (max-width: 739px) {
-  /* content  */
-  #content {
-    display: block;
-    margin: 0 32px;
-  }
-  .content--donvi {
-    width: 100%;
-    margin-top: 32px;
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-  }
-  .gopanh {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .content--img {
-    width: 64px;
-  }
-  .hinhAnh li {
-    padding: 0px !important;
-    margin: 16px 0px;
-  }
-  .right-section {
-    display: block;
-    width: 100%;
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-    margin-top: 32px;
-  }
-  .user-detail {
-    display: block;
-    text-align: center;
-  }
-  .form-group input {
-    width: 64%;
-    padding: 0px 16px;
-  }
-  .details {
-    margin-left: 0px;
-  }
-  #lydo {
-    width: 64%;
-    padding: 32px;
-  }
-  .hoptac {
-    margin: 32px 8px;
-  }
-  /* end content  */
-  /* footer  */
   #site-footer {
     padding-bottom: 0;
   }
@@ -493,11 +300,7 @@
   #site-footer {
     text-align: center;
   }
-  .social-icons {
-    margin-right: 0px !important;
-  }
 }
-/* end footer  */
 .social-icons {
   padding-left: 0;
   margin-bottom: 0;
@@ -554,7 +357,7 @@
 #site-footer .social-icons a.dribbble:hover {
   background-color: #ea4c89;
 }
-@media (max-width: 739px) {
+@media (max-width: 767px) {
   .social-icons li.title {
     display: block;
     margin-right: 0;
@@ -562,35 +365,76 @@
   }
 }
 /* end footer  */
-/* back top  */
-.back-top-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
+.ContactUs-Main a {
+  color: #454545;
+  text-decoration: none;
+}
+
+.ContactUs-Main a:hover {
+  color: red;
+}
+
+.ContactUs-TieuDe h1 {
+  font-weight: 700;
+}
+
+#ContactUs-button {
+  width: 100%;
   height: 50px;
-
-  color: #000;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background-color: whitesmoke;
-  border: 3px solid rgb(61, 61, 231);
-  transition: 0.25s ease;
-  /* visibility: hidden;
-  opacity: 0; */
-  z-index: 4;
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(-10px);
+  font-weight: 700;
+  background-color: #026fb5;
+  font-size: 17px;
 }
 
-.back-top-btn:is(:hover, :focus-visible) {
-  box-shadow: 0px 3px 20px hsla(180, 90%, 43%, 0.2);
+.ContactUs-Label {
+  font-size: 0.9em;
+  font-weight: 600;
 }
 
-.back-top-btn.active {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(-10px);
+.ContactUs-Label span {
+  color: red;
+  font-weight: 700;
+}
+
+.ContactUs-Input {
+  width: 100%;
+  height: auto;
+  resize: none;
+}
+.ContactUs-EmailText a {
+  color: #454545;
+  text-decoration: none;
+}
+.ContactUs-EmailText a:hover {
+  color: red;
+}
+#ContactUs-TenBieuTuong {
+  justify-items: center;
+}
+
+#ContactUs-BieuTuong li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 1em 0 0;
+  font-size: 1.5em;
+}
+
+#ContactUs-BieuTuong li a {
+  color: rgb(131, 128, 128);
+}
+
+#ContactUs-BieuTuong li a:hover {
+  color: #026fb5;
+}
+
+#Contact-Us-Iframe {
+  padding: 0.2em;
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 0.5em;
+  margin: 0 0 1em 0;
+}
+
+#ContactUs-Map {
+  width: 100%;
+  height: 265px;
 }

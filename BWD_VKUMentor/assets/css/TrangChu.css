@@ -326,6 +326,7 @@ body {
   height: 64px;
 }
 #findmentor {
+  font-family: fontBWD;
   height: auto;
   justify-content: center;
   align-items: center;
@@ -339,11 +340,14 @@ body {
 }
 #findmentor input {
   border-radius: 10px;
+  font-family: fontBWD;
 }
 #findmentor select {
   border-radius: 10px;
+  font-family: fontBWD;
 }
 #findmentor .find {
+  font-family: fontBWD;
   padding-bottom: 16px;
   padding-top: 12px;
   padding-left: 64px;
