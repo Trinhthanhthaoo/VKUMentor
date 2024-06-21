@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="./assets/css/public.css">
+    <link rel="stylesheet" src="./trangchu.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/mentor.png">
+
+</head>
+<body id="top">
+    <div class="container">
+        <div class="background">
+          <div id="header" data-header>
+            <div class="navbar">
+              <div class="logo">
+                <a href="./index.html"
+                  ><img src="./assets/img/logo.png" alt=""
+                /></a>
+              </div>
+  
+              <ul class="links">
+                <a href="./index.html"><li>Trang chủ</li></a>
+                <a href="./DangKyMentor.html"><li>Đăng ký Mentor</li></a>
+                <a href="./index.html"><li>Tìm kiếm Mentor</li></a>
+                <a href="#"><li>Cộng đồng</li></a>
+                <a href="./HopTac.html"><li>Hợp tác</li></a>
+                <a href="#site-footer"><li>Liên Hệ</li></a>
+              </ul>
+              <a class="action_btn" href="./Login.html"> BẮT ĐẦU </a>
+              <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+              <!-- Dropnav -->
+              <div class="dropdown_menu">
+                <li>
+                  <a href="./index.html"><li>Trang chủ</li></a>
+                </li>
+                <li>
+                  <a href="./DangKyMentor.html"><li>Đăng ký Mentor</li></a>
+                </li>
+                <li>
+                  <a href="./index.html"><li>Tìm kiếm Mentor</li></a>
+                </li>
+                <li>
+                  <a href="#"><li>Cộng đồng</li></a>
+                </li>
+                <li>
+                  <a href="./HopTac.html"><li>Hợp tác</li></a>
+                </li>
+                <li>
+                  <a href="#site-footer"><li>Liên Hệ</li></a>
+                </li>
+                <li>
+                  <a class="action_btn2" href="./Login.html">BẮT ĐẦU</a>
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="timkiem"></div>
+        <div id="findmentor">
+          <div class="find__mentor__text">
+            <p class="title_4">Tự học trực tuyến với VKU Mentor.</p>
+            <input type="text" class="EnterName" placeholder="Nhập tên Mentor" />
+          </div>
+          <!-- <input type="text" placeholder="Khoa"> -->
+          <select name="Khoa" id="Khoa" class="Khoa">
+            <option value="Khoa">Chọn Khoa</option>
+            <option value="Khoa học máy tính">Khoa học máy tính</option>
+            <option value="Kỹ thuật điện tử">Kỹ thuật điện tử</option>
+            <option value="Kinh tế số và thương mại">
+              Kinh tế số và Thương mại
+            </option>
+          </select>
+    
+          <!-- <input type="text" placeholder="Ngành">  -->
+          <select name="Ngành" id="Ngành" class="Ngành">
+            <option value="Ngành">Chọn Ngành</option>
+            <option value="Khoa học máy tính">Khoa học máy tính</option>
+            <option value="Kỹ thuật điện tử">Kỹ thuật điện tử</option>
+            <option value="Kinh tế số và thương mại">
+              Kinh tế số và Thương mại
+            </option>
+          </select>
+          <!-- <input type="text" placeholder="Môn"> -->
+          <select name="Môn" id="Môn" class="Môn">
+            <option value="Môn">Môn</option>
+            <option value="Lập trình cơ bản">Lập trình cơ bản</option>
+            <option value="Lập trình Java">Lập trình Java</option>
+            <option value="Kinh tế số và thương mại">
+              Kinh tế số và Thương mại
+            </option>
+          </select>
+          <button class="find">Tìm kiếm</button>
+        </div>
+   
+            <div class="content">
+                <div class="container">
+                    <div class="exam">
+                        <main>
+                        <div style="margin-left: 0px;" class="mentor-text center" >
+                          Tài liệu học tập <i class="fa-solid fa-arrow-right"></i>
+                         </div>
+                            <div class="card-container">
+                                <!-- Các thẻ card ở đây -->
+                                 <div class="card">
+                                    <img src="assets/img/C++.jpg" alt="Delicious Food">
+                                    <div class="card-content">
+                                        <h2>C++ cơ bản</h2>
+                                        <p> Cung cấp hướng dẫn chi tiết về ngôn ngữ lập trình này và các nguyên tắc thiết kế phần mềm.</p>
+                                        <a href="#">KinhNguyen <i class="fa-solid fa-user"></i></a>
+                                       
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/img/python.jpg" alt="Delicious Food">
+                                    <div class="card-content">
+                                        <h2>Lập trình với Python</h2>
+                                        <p>Cung cấp kiến thức cơ bản và ứng dụng đa dạng của ngôn ngữ lập trình này.</p>
+                                        <a href="#">ZitPham <i class="fa-solid fa-user"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/img/Chiến lược giao dịch vĩ mô Macro Trading người chơi cần biết.jpg" alt="Delicious Food">
+                                    <div class="card-content">
+                                        <h2>Kinh tế vĩ mô</h2>
+                                        <p>Cung cấp cái nhìn tổng quan, đưa ra những thông tin mới và sâu sắc về hệ thống kinh tế toàn cầu.</p>
+                                        <br>
+                                        <a href="#">VuTran <i class="fa-solid fa-user"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/img/sql.jpg" alt="Delicious Food">
+                                    <div class="card-content">
+                                        <h2>Cơ sở dữ liệu</h2>
+                                        <p>Hiểu và áp dụng ngôn ngữ truy vấn cơ sở dữ liệu để tương tác, truy xuất và quản lý dữ liệu hiệu quả.</p>
+                                        <a href="#">DuongThuy <i class="fa-solid fa-user"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/img/EL.jpg" alt="Delicious Food">
+                                    <div class="card-content">
+                                        <h2>Tiếng Anh</h2>
+                                        <p>TA1, TA2, TA3, TANC1, TANC2, TACN1, TACN2.</p>
+                                        <a href="#">ELClub <i class="fa-solid fa-user"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/img/C.jpg" alt="Delicious Food">
+                                    <div class="card-content">
+                                        <h2>C#</h2>
+                                        <p>Ngôn ngữ lập trình C# và cách phát triển ứng dụng sử dụng nó.</p>
+                                        <a href="#">PXH2910 <i class="fa-solid fa-user"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/img/LKT.jpg" alt="Tasty Pasta">
+                                    <div class="card-content">
+                                        <h2>Luật Kinh tế</h2>
+                                        <p>Nguyên lý pháp lý trong lĩnh vực kinh tế, hợp đồng, cạnh tranh, chính sách.</p>
+                                        <br>
+                                        <a href="#">TrucTran <i class="fa-solid fa-user"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="assets/img/gt.jpg" alt="Healthy Salad">
+                                    <div class="card-content">
+                                        <h2>GT1, GT2, ĐSTT, TRR, XSTK</h2>
+                                        <p>Toán học và những điều thú vị về nó.</p>
+                                        <a href="#">MinhTran <i class="fa-solid fa-user"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                    <div class="testevent">
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                        <section>
+                            <!-- Các cuộc thi VKUMentor ở đây -->
+                            <div style="position: absolute; left: 0; top: 0;" class="mentor-text">
+                             Các cuộc thi dành cho VKU Mentor <i class="fa-solid fa-arrow-right"></i>
+                             </div>
+  <div class="container">
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/test.jpg" alt="Trust & Co.">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Thử tài lập trình</h3>
+        <p>Xin chào các bạn,
+           VKUMentor Contest sẽ diễn ra vào 20h00 ngày 08/11/2024 với thời lượng kéo dài 2 giờ 30 phút.</p>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="ChiTiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#70b3b1;" class="DangKy">Đăng Ký</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/ThuatToan.jpg" alt="Tonic">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Giao lưu thuật toán</h3>
+        <p>Xin chào các bạn,
+           cuộc thi giao lưu thuật toán sẽ tổ chức vào 28/05/2024 với thời gian là 1h30p.</p>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="ChiTiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#70b3b1;" class="DangKy">Đăng Ký</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/design.jpg" alt="Tonic">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Thỏa sức design</h3>
+        <p>Hãy tham gia cuộc thi tìm thiên tài trong làng design VKU.</p>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="ChiTiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#70b3b1;" class="DangKy">Đăng Ký</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/BM.jpg" alt="Tonic">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Bảo mật chỉ là chuyện nhỏ vs NS</h3>
+        <p>Xin chào các bạn NS,
+           Cuộc thi bảo mật an toàn thông tin sẽ giúp các bạn trao đổi kinh nghiệm với nhau nhiều hơn.</p>
+           <br>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="ChiTiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#70b3b1;" class="DangKy">Đăng Ký</li>
+          <li style="--clr-tag:#b39970;" class="DangKy">Tham Gia</li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/KN.jpg" alt="Tonic">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Khởi nghiệp</h3>
+        <p>Xin Chào, Contest ý tưởng khởi nghiệp sáng tạo đang diễn ra 17/05/2024 đến 27/05/2024</p>
+        <br>
+        <br>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="Chitiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#d05fa2;" class="DangKy">DangKy</li>
+           <li style="--clr-tag:#5fd07d;" class="marketing">Tham Gia Ngay</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/Sp.jpg" alt="Shower Gel">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>ETC</h3>
+        <p>Cuộc thi thuyết trình TACN đang được diễn ra từ 2/05/2024 - 29/05/2024</p>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="Chitiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#70b3b1;" class="DangKy">Đăng Ký</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/javaoop.jpg" alt="Shower Gel">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Đồ án Java đẹp</h3>
+        <p>Cuộc thi tìm kiếm đồ án đẹp nhất</p>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="Chitiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#70b3b1;" class="DangKy">Đăng Ký</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="assets/img/BWD.jpg" alt="Shower Gel">
+          </div>
+          <div class="icon">
+            <a href="#" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Best Web Design</h3>
+        <p>Tham gia cuộc thi best web design bắt đầu từ 25/5/2024</p>
+        <br>
+        <ul>
+          <li style="--clr-tag:#d3b19a;" class="Chitiet">Xem Chi Tiết</li>
+          <li style="--clr-tag:#70b3b1;" class="DangKy">Đăng Ký</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up-outline" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></ion-icon>
+      </a>
+    </div>
+    <!-- Site footer -->
+    <footer id="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <img
+              class="logo-img"
+              src="./assets/img/logo.png"
+              alt=""
+            />
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <ul class="footer-links">
+              <li>
+                <div class="tieude">Đường dẫn nhanh</div>
+              </li>
+              <li>
+                <a href="./index.html"
+                  >Trang chủ</a
+                >
+              </li>
+              <li>
+                <a href="./DangKyMentor.html"
+                  >Đăng ký mentor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./PublicVKU.html"
+                  >Cộng đồng</a
+                >
+              </li>
+              <li>
+                <a href=""
+                  >Liên hệ hợp tác</a
+                >
+              </li>
+              <li>
+                <a href=""
+                  >Góp ý phản hồi</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <div class="tieude">Liên hệ</div>
+            <ul class="footer-links lienhe">
+              <li><div class="phude">VKU Mentor</div></li>
+              <li>
+                Địa điểm: 470 Trần Đại Nghĩa, Hòa Quý,<br> Ngũ Hành Sơn, Đà Nẵng
+              </li>
+              <li>Số điện thoại: (+84) 012345678</li>
+               Email: [vku.mentor@gmail.com](mailto:vku.mentor@gmail.com)
+              </li>
+          </div>
+        </div>
+       <hr/>
+      </div> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+              <div class="copyright">&#169; </div>
+              2024 VKU Mentor được xây dựng và phát triển bởi <br>Kính, Thảo, Việt, Nhật 
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa-brands fa-square-instagram"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+    Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6645f41e9a809f19fb317f15/1hu0k36ir";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<script>
+    var _widget_settings = {
+    positions: 'bottom right',
+    support: {
+        staff: {
+        name: 'VKUMentor',
+        image: 'https://cdn.jsdelivr.net/gh/thietkeblogspot/images/staff.png',
+        messages: 'Không biết chúng tôi có thể hỗ trợ gì cho anh/chị không ạ?'
+        }
+    },
+    buttons: {
+        contact: {
+        visible: 'true',
+        id: 'https://vku.udn.vn/',
+        messages: 'Liên hệ'
+        },
+        email: {
+        visible: 'true',
+        id: 'trinhthanhthao2k5@gmail.com',
+        messages: 'Gửi email'
+        },
+        call: {
+        visible: 'true',
+        id: '0396688272',
+        messages: 'Gọi điện'
+        },
+        sms: {
+        visible: 'true',
+        id: '0396688274',
+        messages: 'Nhắn tin'
+        },
+        viber: {
+        visible: 'false',
+        id: 'vhost.vn',
+        messages: 'Chat Viber'
+        },
+        telegram: {
+        visible: 'false',
+        id: 'vHostbot',
+        messages: 'Chat Telegram'
+        },
+        zalo: {
+        visible: 'true',
+        id: '0375613351',
+        messages: 'Chat Zalo'
+        },
+        facebook: {
+        visible: 'true',
+        id: 'thietkeblogspot',
+        messages: 'Chat Facebook'
+        }
+    }
+    }
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/thietkeblogspot/js/contact-buttons-widget.min.js'></script>
+<script src="./Javascript/public.js"></script>
+<script src="./Javascript/js.js"></script>
+</html>
