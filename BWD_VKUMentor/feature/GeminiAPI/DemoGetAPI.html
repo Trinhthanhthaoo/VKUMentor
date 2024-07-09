@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+    <p id="displayText">Test Gemini get APIs</p>
+    <button id="myButton">Click</button>
+    <script type="module">
+        document.getElementById('myButton').addEventListener('click', hello )
+import { GoogleGenerativeAI } from "@google/generative-ai";
+const genAI = new GoogleGenerativeAI("AIzaSyCnv_cvghd6xQycP_gvrVsBouezxhU_KiI");
+
+     async function hello(){
+          
+  // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+
+  const prompt = "Write a story about a magic backpack."
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  document.getElementById('displayText').textContent = tẽtxt
+  console.log(text);
+}
+        
+
+    </script>
+</body>
+</html>
