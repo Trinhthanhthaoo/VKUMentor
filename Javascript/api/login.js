@@ -19,7 +19,7 @@ btnLogin.addEventListener("click", () => {
         
         if (response.data) {
             localStorage.setItem("isLogin", true)
-            window.location.href = "./../../index.html"
+            window.location.href = "/"
         }
 
       }

@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       html += `                 <div class="card">
-                                    <img src="assets/img/${item.HinhAnh}" alt="Delicious Food">
+                                    <img src="/assets/img/${item.HinhAnh}" alt="Delicious Food">
                                     <div class="card-content">
                                         <h2>${item.TieuDe}</h2>
                                         <p>${item.NoiDung}</p>
@@ -112,7 +112,7 @@ class NguoiDungapi {
 //   //       console.log(res.data); // Log response data to console
 //   //       alert("Đăng nhập thành công!");
 //   //       // Redirect to index.html upon successful login
-//   //       window.location.replace("./index.html");
+//   //       window.location.replace("/");
 //   //     } else {
 //   //       alert("Đăng nhập thất bại!");
 //   //     }
@@ -154,7 +154,7 @@ for (let item of data) {
 
   html += `
     <section>
-      <img src="./assets/img/HDN.png" alt="Person Pointing" />
+      <img src="/assets/img/HDN.png" alt="Person Pointing" />
       <div class="box">
         <h1>Huỳnh Đức Nhật</h1>
         <p>Sinh viên khóa 23, 23IT2</p>

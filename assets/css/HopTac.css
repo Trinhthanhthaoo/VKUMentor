@@ -9,7 +9,7 @@
 }
 @font-face {
   font-family: fontBWD;
-  src: url(../font/00119-UTM-HelvetIns/00119-UTM-HelvetIns.ttf);
+  src: url(/assets/font/00119-UTM-HelvetIns/00119-UTM-HelvetIns.ttf);
 }
 /* header  */
 .navbar li {
@@ -132,7 +132,7 @@
 .container {
   /* display: flex; */
   /* flex-direction: column; */
-  /* background-image: url(../img/bg.png); */
+  /* background-image: url(/assets/img/bg.png); */
   /* background-position: center; */
 }
 

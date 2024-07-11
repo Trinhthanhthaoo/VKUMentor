@@ -5,7 +5,7 @@
 }
 @font-face {
   font-family: fontBWD;
-  src: url(../font/00119-UTM-HelvetIns/00119-UTM-HelvetIns.ttf);
+  src: url(/assets/font/00119-UTM-HelvetIns/00119-UTM-HelvetIns.ttf);
 }
 
 body {
