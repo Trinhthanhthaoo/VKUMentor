@@ -58,7 +58,8 @@
     <!-- Content -->
     <div class="content">
         <div class="title">
-            <h2>Giao lưu thuật toán</h2>
+            <h2><i class="fa-solid fa-award" style="color: #d8134e;"></i>
+Giao lưu thuật toán</h2>
             <ul class="tabs">
                 <li class="tab">
                     <a href="#">
@@ -88,10 +89,11 @@
      <div class="ag-content-block">
   <div class="ag-format-container">
     <div class="ag-content_title">
+    <i class="fa-solid fa-book" style="color: #74C0FC;"></i>
      Danh sách bài
     </div>
     <div class="ag-grid_title">
-      Thử thách số học
+      Thử thách suy luận
     </div>
     <div class="ag-grid_box">
       <div class="ag-grid_row">
@@ -120,7 +122,8 @@
           <span class="ag-grid_text-v3">Dễ</span>
         </div>
         <div class="ag-grid_col">
-         Phân tích thừa số nguyên tố
+        <a href="https://luyencode.net/problem/ptich">  Phân tích thừa số nguyên tố</a>
+       
         </div>
       </div>
 
@@ -135,7 +138,8 @@
           <span class="ag-grid_text-v3">Dễ</span>
         </div>
         <div class="ag-grid_col">
-         Tìm ước của 1 số
+        <a href="https://luyencode.net/problem/timuoc"> Tìm ước của 1 số</a>
+        
         </div>
       </div>
 
@@ -150,7 +154,8 @@
           <span class="ag-grid_text-v3">Dễ</span>
         </div>
         <div class="ag-grid_col">
-         Bài toán đếm
+        <a href="https://luyencode.net/problem/pairc"> Bài toán đếm</a>
+        
         </div>
       </div>
 
@@ -165,7 +170,8 @@
           <span class="ag-grid_text-v3">Trung bình</span>
         </div>
         <div class="ag-grid_col">
-          Chia hết <b>Chữ số</b>
+        <a href="https://luyencode.net/problem/pairc">  Chia hết <b>Chữ số</b></a>
+        
         </div>
       </div>
 
@@ -180,7 +186,8 @@
           <span class="ag-grid_text-v3">Khó</span>
         </div>
         <div class="ag-grid_col">
-         	Truy vấn tổng trong khoảng trên 1 dãy số
+        <a href="https://luyencode.net/problem/pairc">	Truy vấn tổng trong khoảng trên 1 dãy số</a>
+         
         </div>
       </div>
 
@@ -195,8 +202,8 @@
           <span class="ag-grid_text-v3">Dễ</span>
 
         </div>
-        <div class="ag-grid_col">
-            Thoát khỏi mê cung       </div>
+        <div class="ag-grid_col"><a href="https://luyencode.net/problem/pairc">    Thoát khỏi mê cung   </a>
+            </div>
       </div>
 
       <div class="ag-grid_row">
@@ -210,7 +217,8 @@
 
         </div>
         <div class="ag-grid_col">
-         Khoảng cách xa nhất
+        <a href="https://luyencode.net/problem/pairc">    Khoảng cách xa nhất</a>
+     
         </div>
       </div>
 
@@ -218,6 +226,7 @@
     </div>
 
  <div class="ag-content_title">
+ <i class="fa-solid fa-people-arrows" style="color: #74C0FC;"></i>
     Trao đổi về cuộc thi
     </div>
 
@@ -339,6 +348,75 @@
         </section>
         
         <section class="container">
+        <!-- inpiration: https://dribbble.com/shots/19541889-Chat-Component -->
+<div class="container">
+
+  <card-with-comments class="card-with-comments" role="article">
+    <div class="card">
+      <div class="card__header">
+        <img src="/assets/img/H.jpg" alt="User image" class="card__avatar">
+        <p class="card__user-name">Thảo Trịnh</p>
+        <p class="card__time">2 days ago</p>
+        <button class="card__options"></button>
+      </div>
+
+      <p class="card__text">ủa mọi người bài 4 sao test case bị lỗi 	TLE	[>2,500s,	3.12 MB]	vậy ạ #include iostream
+using namespace std;
+long long sumOfDigits(long long num) {
+    long long sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+int main() {
+    long long N;
+    cin >> N;
+
+    long long count = 0;
+    for (long long i = 1; i <= N; ++i) {
+        if (isGoodNumber(i)) {
+            ++count;
+        }
+    }
+
+    cout << count << endl;
+    return 0;
+}
+</p>
+
+      <div class="card__actions">
+        <button class="card__actions-emojis"></button>
+        <p class="card__actions-replies">1 reply</p>
+      </div>
+    </div>
+
+    <div class="comments">
+      <div class="comment">
+        <div class="comment__header">
+          <img src="/assets/img/VKU.jpg" alt="Comment writter image" class="comment__avatar">
+          <p class="comment__user-name">TTTT0803</p>
+          <p class="comment__time">7h ago</p>
+          <p class="comment__chip">Author</p>
+          <button class="comment__options"></button>
+        </div>
+
+        <p class="comment__text">Bạn làm theo kiểu vector thử nha</p>
+
+        <div class="comment__actions">
+          <button class="comment__actions-emojis"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form">
+      <img src="/assets/img/VKU.jpg" alt="Your avatar" class="form__avatar">
+      <input type="text" class="form__input" placeholder="Enter reply">
+      <button class="form__button"></button>
+    </div>
+  </card-with-comments>
+
             <!--article begining-->
             <article class="post_card padding_1x">
                 <figure class="fixed_flex user_details">
@@ -430,6 +508,37 @@
                 </ul>
             </article>
             <!--article ends-->
+             <!--article begining-->
+            <article class="post_card padding_1x">
+                <figure class="fixed_flex user_details">
+                    <img src="https://i.postimg.cc/htn2BgT8/author.png" alt="" />
+                    <figcaption>
+                        <h5 class="sub_title">Đức Nhậtt<a href="#">Follow</a></h5>
+                        <p>Member of ICPC <b>Jul 13</b></p>
+                    </figcaption>
+                </figure>
+                <a href="#" class="title">Bài 4 không hiểu đề cho lắm?</a>
+                <ul class="fixed_flex icons">
+                    <li class="fixed_flex">
+                        <span class="fixed_flex votes">
+                            <a href="#"><iconify-icon icon="bx:upvote"></iconify-icon> 50</a>
+                            <a href="#"><iconify-icon icon="bx:downvote"></iconify-icon> 10</a>
+                        </span>
+                        <a href="javascript:void(0)" title="Comment"><iconify-icon icon="uil:comment"></iconify-icon> 2</a>
+                        <a href="#" title="Views"><iconify-icon icon="grommet-icons:view"></iconify-icon> 102</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="more"><iconify-icon icon="pepicons-pencil:dots-x"></iconify-icon></a>
+                        <span class="dropdown_content">
+                            <a href="#"><iconify-icon icon="material-symbols:bookmark-outline"></iconify-icon> Bookmark</a>
+                            <a href="#"><iconify-icon icon="material-symbols:share-outline"></iconify-icon> Share </a>
+                            <a href="#"><iconify-icon icon="material-symbols:report-outline"></iconify-icon> Report</a>
+                        </span>
+                    </li>
+                </ul>
+            </article>
+            <!--article ends-->
+            
         </section>
     </div>
     <div class="flex_content divisions right_division padding_1x">

@@ -1,18 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Hover Effect</title>
-    <link rel="stylesheet" href="assets/css/test.css">
-</head> 
-<body>
-    <div class="card">
-        <img class="card-img" src="assets/img/backgroundDLMT.png" alt="">
-        <div class="card-body">
-            <h1 class="card-title">TTTT</h1>
-            <p class="card-sub-title">Thanh Thao</p>
-        </div>
-    </div>
-</body>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  </head>
+  <body>
+    <input type="file" id="file-input" />
+    <div id="pdf-content"></div>
+    <input id="txtPDF" type="text">
+    <script>
+      const fileInput = document.getElementById("file-input");
+      const contentDiv = document.getElementById("pdf-content");
+      const txtPDF = document.getElementById("txtPDF");
+
+      fileInput.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file.type != "application/pdf") {
+          console.error("Vui lòng chọn file PDF");
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          const typedarray = new Uint8Array(event.target.result);
+
+          pdfjsLib.getDocument(typedarray).promise.then((pdf) => {
+            let text = "";
+            for (let i = 1; i <= pdf.numPages; i++) {
+              pdf
+                .getPage(i)
+                .then((page) => {
+                  return page.getTextContent();
+                })
+                .then((content) => {
+                  content.items.forEach((item) => {
+                    text += item.str + " ";
+                  });
+                  if (i === pdf.numPages) {
+                    contentDiv.textContent = text;
+                    let arrText = text.split(" ")
+                    txtPDF.value = arrText[0]
+                    console.log(arrText);
+                  }
+                });
+            }
+          });
+        };
+        reader.readAsArrayBuffer(file);
+      });
+    </script>
+  </body>
 </html>
