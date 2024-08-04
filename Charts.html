@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/Charts.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/mentor.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- header  -->
+    <div class="background">
+        <div id="header" data-header>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./assets/img/logo.png" alt="Logo">
+                    </a>
+                </div>
+                <ul class="links">
+                    <a href="./index.html"><li>Trang chủ</li></a>
+                    <a href="./index.html"><li>Đăng ký Mentor</li></a>
+                    <a href="./index.html"><li>Tìm kiếm Mentor</li></a>
+                    <a href="#"><li>Cộng đồng</li></a>
+                    <a href="#site-footer"><li>Liên Hệ</li></a>
+                </ul>
+                <a class="action_btn" href="./Login.html"> BẮT ĐẦU </a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <!-- Dropnav -->
+                <div class="dropdown_menu">
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./index.html">Đăng ký Mentor</a></li>
+                    <li><a href="./index.html">Tìm kiếm Mentor</a></li>
+                    <li><a href="#">Cộng đồng</a></li>
+                    <li><a href="#site-footer">Liên Hệ</a></li>
+                    <li><a class="action_btn2" href="./Login.html">BẮT ĐẦU</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header  -->
+
+    <!-- content -->
+    <div class="content">
+        <div class="title">
+            <h2>Yearly Income Overview</h2>
+        </div>
+        <div class="widget">
+            <table id="anatomy-simple-chart" class="charts-css bar show-heading show-labels show-primary-axis show-4-secondary-axes show-data-axes data-spacing-2 hide-data">
+                <caption> Chart Heading </caption>
+                <thead>
+                  <tr>
+                    <th scope="col"> Year </th>
+                    <th scope="col"> Value </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th> 2016 </th>
+                    <td style="--size: calc( 20 / 100 );"> 20 </td>
+                  </tr>
+                  <tr>
+                    <th> 2017 </th>
+                    <td style="--size: calc( 40 / 100 );"> 40 </td>
+                  </tr>
+                  <tr>
+                    <th> 2018 </th>
+                    <td style="--size: calc( 60 / 100 );"> 60 </td>
+                  </tr>
+                  <tr>
+                    <th> 2019 </th>
+                    <td style="--size: calc( 80 / 100 );"> 80 </td>
+                  </tr>
+                  <tr>
+                    <th> 2020 </th>
+                    <td style="--size: calc( 100 / 100 );"> 100 </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- end content -->
+
+    <script src="/Javascript/js.js"></script>
+    <script>
+        document.querySelector('.toggle_btn').addEventListener('click', function() {
+            document.querySelector('.dropdown_menu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
