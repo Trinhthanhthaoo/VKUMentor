@@ -13,18 +13,16 @@
     />
     <link rel="stylesheet" href="/assets/css/styleLogin.css" />
     <link rel="icon" type="image/x-icon" href="/assets/img/mentor.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Đăng nhập</title>
 
-    <title>Đăng nhập </title>
-
-    <script>
-    
-      const isLogin = localStorage.getItem("isLogin")
+    <!-- <script>
+      const isLogin = localStorage.getItem("isLogin");
 
       if (isLogin) {
-          window.location.href = "/"
+        window.location.href = "/";
       }
-
-    </script>
+    </script> -->
   </head>
   <body>
     <div class="container">
@@ -38,11 +36,21 @@
           <h2 class="title">Log in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" id="txtUsername" name="txtUsername" placeholder="Username" />
+            <input
+              type="text"
+              id="txtUsername"
+              name="txtUsername"
+              placeholder="Username"
+            />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" id="txtPassword" name="txtPassword" placeholder="Password" />
+            <input
+              type="password"
+              id="txtPassword"
+              name="txtPassword"
+              placeholder="Password"
+            />
           </div>
           <input type="button" id="btnLogin" value="Login" class="btn" />
           <p class="social-text">Or Sign in with social platform</p>
@@ -73,17 +81,21 @@
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input id="Username_signup" type="text" placeholder="Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="text" placeholder="Email" />
+            <input id="Email_signup" type="text" placeholder="Email" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input
+              id="password_signup"
+              type="password"
+              placeholder="Password"
+            />
           </div>
-          <input type="submit" value="Sign up" class="btn" />
+          <input id="signup_Btn" type="submit" value="Sign up" class="btn" />
           <p class="social-text">Or Sign in with social platform</p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -118,7 +130,7 @@
             </p>
             <button class="btn" id="sign-in-btn">Sign in</button>
           </div>
-          <img src="signin.svg" alt="" class="image" />
+          <img src="" alt="" class="image" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -133,13 +145,14 @@
             </p>
             <button class="btn" id="sign-up-btn">Sign up</button>
           </div>
-          <img src="signup.svg" alt="" class="image" />
+          <img src="" alt="" class="image" />
         </div>
       </div>
     </div>
     <script src="/Javascript/app.js"></script>
     <!-- <script src="/Javascript/api.js"></script> -->
-    <script src="/Javascript/api/login.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <!-- <script src="/Javascript/api/login.js"></script> -->
+    <script src="/Javascript/api/loginTest.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
   </body>
 </html>

@@ -630,131 +630,216 @@ td ul li {
   transform: translateY(-10px);
 }
 
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .form-container {
-	width: 100%;
-	height: 80vh;
-	background-color: #fff;
-	display: flex;
-   	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 80vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .upload-files-container {
-	background-color: #f7fff7;
-	width: 420px;
-	padding: 30px 60px;
-	border-radius: 40px;
-	display: flex;
-   	align-items: center;
-   	justify-content: center;
-	flex-direction: column;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px, rgba(0, 0, 0, 0.28) 0px 6px 6px;
+  background-color: #f7fff7;
+  width: 420px;
+  padding: 30px 60px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px, rgba(0, 0, 0, 0.28) 0px 6px 6px;
 }
 .drag-file-area {
-	border: 2px dashed #7b2cbf;
-	border-radius: 40px;
-	margin: 10px 0 15px;
-	padding: 30px 50px;
-	width: 350px;
-	text-align: center;
+  border: 2px dashed #7b2cbf;
+  border-radius: 40px;
+  margin: 10px 0 15px;
+  padding: 30px 50px;
+  width: 350px;
+  text-align: center;
 }
 .drag-file-area .upload-icon {
-	font-size: 50px;
+  font-size: 50px;
 }
 .drag-file-area h3 {
-	font-size: 26px;
-	margin: 15px 0;
+  font-size: 26px;
+  margin: 15px 0;
 }
 .drag-file-area label {
-	font-size: 19px;
+  font-size: 19px;
 }
 .drag-file-area label .browse-files-text {
-	color: #7b2cbf;
-	font-weight: bolder;
-	cursor: pointer;
+  color: #7b2cbf;
+  font-weight: bolder;
+  cursor: pointer;
 }
 .browse-files span {
-	position: relative;
-	top: -25px;
+  position: relative;
+  top: -25px;
 }
 .default-file-input {
-	opacity: 0;
+  opacity: 0;
 }
 .cannot-upload-message {
-	background-color: #ffc6c4;
-	font-size: 17px;
-	display: flex;
-	align-items: center;
-	margin: 5px 0;
-	padding: 5px 10px 5px 30px;
-	border-radius: 5px;
-	color: #BB0000;
-	display: none;
+  background-color: #ffc6c4;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding: 5px 10px 5px 30px;
+  border-radius: 5px;
+  color: #bb0000;
+  display: none;
 }
 @keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.cannot-upload-message span, .upload-button-icon {
-	padding-right: 10px;
+.cannot-upload-message span,
+.upload-button-icon {
+  padding-right: 10px;
 }
 .cannot-upload-message span:last-child {
-	padding-left: 20px;
-	cursor: pointer;
+  padding-left: 20px;
+  cursor: pointer;
 }
 .file-block {
-	color: #f7fff7;
-	background-color: #7b2cbf;
-  	transition: all 1s;
-	width: 390px;
-	position: relative;
-	display: none;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	margin: 10px 0 15px;
-	padding: 10px 20px;
-	border-radius: 25px;
-	cursor: pointer;
+  color: #f7fff7;
+  background-color: #7b2cbf;
+  transition: all 1s;
+  width: 390px;
+  position: relative;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 15px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
 }
 .file-info {
-	display: flex;
-	align-items: center;
-	font-size: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
 }
 .file-icon {
-	margin-right: 10px;
+  margin-right: 10px;
 }
-.file-name, .file-size {
-	padding: 0 3px;
+.file-name,
+.file-size {
+  padding: 0 3px;
 }
 .remove-file-icon {
-	cursor: pointer;
+  cursor: pointer;
 }
 .progress-bar {
-	display: flex;
-	position: absolute;
-	bottom: 0;
-	left: 4.5%;
-	width: 0;
-	height: 5px;
-	border-radius: 25px;
-	background-color: #4BB543;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 4.5%;
+  width: 0;
+  height: 5px;
+  border-radius: 25px;
+  background-color: #4bb543;
 }
 .upload-button {
-	font-family: 'Montserrat';
-	background-color: #7b2cbf;
-	color: #f7fff7;
-	display: flex;
-	align-items: center;
-	font-size: 18px;
-	border: none;
-	border-radius: 20px;
-	margin: 10px;
-	padding: 7.5px 50px;
-	cursor: pointer;
+  font-family: "Montserrat";
+  background-color: #7b2cbf;
+  color: #f7fff7;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 7.5px 50px;
+  cursor: pointer;
 }
+/* animation  */
+.animation-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Đặt phía sau tất cả các phần tử khác */
+  overflow: hidden;
+}
+.box-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.box-area li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background-image: linear-gradient(
+    180deg,
+    rgb(22, 167, 239),
+    rgb(148, 45, 212)
+  );
+  animation: animate 5s linear infinite;
+  bottom: -150px;
+}
+.box-area li:nth-child(1) {
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+.box-area li:nth-child(2) {
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.box-area li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+  left: 42%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* end animation  */
