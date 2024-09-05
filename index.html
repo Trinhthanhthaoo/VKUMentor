@@ -29,9 +29,22 @@
               <a href="./PublicVKU.html"><li>Cộng đồng</li></a>
               <a href="./HopTac.html"><li>Hợp tác</li></a>
               <a href="./DanhGia.html"><li>Đánh giá</li></a>
-              <a href="/LienHe.html"><li>Về chúng tớ</li></a>
+              <a href="#site-footer"><li>Liên Hệ</li></a>
             </ul>
-            <a class="action_btn" href="./Login.html"> BẮT ĐẦU </a>
+            <ul>
+              <li id="action_btn">
+                <a  class="action_btn" href="./Login. html">BẮT ĐẦU</a>
+                
+              </li>
+              <ul class="log">
+                <li class="dropdown">
+                <span class="action_btn3" id="user_name" style="display: none;"></span>
+                
+                <ul class="dropdown-content">
+                  <li id="logout"><a href="#">Đăng xuất</a></li>
+                </ul>
+              </ul></li>
+            </ul>
             <div class="toggle_btn">
               <i class="fa-solid fa-bars"></i>
             </div>
@@ -59,8 +72,10 @@
                 <a href="/LienHe.html"><li>Về chúng tớ</li></a>
               </li>
               <li>
-                <a class="action_btn2" href="./Login.html">BẮT ĐẦU</a>
+                <a class="action_btn2" id="action_btn2" href="./Login.html">BẮT ĐẦU</a>
+                <span class="action_btn3" id="user_name1" style="display: none;"></span>
               </li>
+                  <li id="logout1"><a href="#" style="display: none;">Đăng xuất</a></li>
             </div>
           </div>
         </div>
@@ -771,8 +786,8 @@ var _widget_settings = {
   </ul>
 </div>
   <!-- end animation  -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/Javascript/axios.js"></script>
+    <script src="/Javascript/js.js"></script>
   </body>
-  </body>
-  
-  <script src="/Javascript/js.js"></script>
 </html>

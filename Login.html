@@ -11,40 +11,34 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/assets/css/styleLogin.css" />
-    <link rel="icon" type="image/x-icon" href="/assets/img/mentor.png" />
+    <link rel="stylesheet" href="./assets/css/styleLogin.css" />
+    <link rel="icon" type="image/x-icon" href="assets/img/mentor.png" />
 
     <title>Đăng nhập </title>
 
-    <script>
-    
-      const isLogin = localStorage.getItem("isLogin")
 
-      if (isLogin) {
-          window.location.href = "/"
-      }
-
-    </script>
   </head>
   <body>
     <div class="container">
       <div class="signin-signup">
         <form action="" class="sign-in-form">
           <div class="logo__signin">
-            <a href="/"
-              ><img class="logo__icon" src="/assets/img/logo.png" alt=""
+            <a href="./index.html"
+              ><img class="logo__icon" src="./assets/img/logo.png" alt=""
             /></a>
           </div>
           <h2 class="title">Log in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" id="txtUsername" name="txtUsername" placeholder="Username" />
+            <input type="text" id="txtUsernameLogin" name="txtUsername" placeholder="Email hoặc Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" id="txtPassword" name="txtPassword" placeholder="Password" />
-          </div>
+            <input type="password" id="txtPasswordLogin" name="txtPassword" placeholder="Mật Khẩu" />
+          </div>  
+          <div id="loginError" style="display: none;"></div>
           <input type="button" id="btnLogin" value="Login" class="btn" />
+        
           <p class="social-text">Or Sign in with social platform</p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -53,7 +47,7 @@
             <a href="" class="social-icon">
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="" class="social-icon">
+            <a href="" class="social-icon" id="google-signin-button">
               <i class="fab fa-google"></i>
             </a>
             <a href="" class="social-icon">
@@ -66,25 +60,25 @@
         </form>
         <form action="" class="sign-up-form">
           <div class="logo__signup">
-            <a href="/"
-              ><img class="logo__icon" src="/assets/img/logo.png" alt=""
+            <a href="./index.html"
+              ><img class="logo__icon" src="./assets/img/logo.png" alt=""
             /></a>
           </div>
-         <!-- Sign Up Form -->
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" id="txtSignupUsername" name="txtSignupUsername" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="text" id="txtSignupEmail" name="txtSignupEmail" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" id="txtSignupPassword" name="txtSignupPassword" placeholder="Password" />
-            </div>
-            <input type="button" id="btnSignUp" value="Sign up" class="btn" />
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text" id="txtUsername" placeholder="Email hoặc Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="txtPassword" placeholder="Mật Khẩu" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="txtConfirmPassword" placeholder="Xác nhận mật khẩu" />
+          </div>
+          <div id="registerError" style="display: none;"></div>
+          <input type="submit"  id="btnRegister" value="Sign up" class="btn" />
           <p class="social-text">Or Sign in with social platform</p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -93,7 +87,7 @@
             <a href="" class="social-icon">
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="" class="social-icon">
+            <a href="" class="social-icon" id="google-signin-button">
               <i class="fab fa-google"></i>
             </a>
             <a href="" class="social-icon">
@@ -138,10 +132,13 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/Javascript/axios.js"></script>
     <script src="/Javascript/app.js"></script>
     <!-- <script src="/Javascript/api.js"></script> -->
     <script src="/Javascript/api/login.js"></script>
-     <script src="/Javascript/api/register.js"></script>
+    <script src="/Javascript/api/google.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   </body>
 </html>

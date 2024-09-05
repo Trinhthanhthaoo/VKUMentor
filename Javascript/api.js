@@ -1,32 +1,16 @@
-// ;(function () {
-//   return new Promise((resolve) => {
-//     if (window.axios) {
-//       return resolve(window.axios);
-//     }
-//     var d = document, jqr, ref = d.getElementsByTagName('body')[0];
-//     jqr = d.createElement('script');
-//     jqr.async = true;
-//     jqr.src = 'https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js';
-//     jqr.onload = function() {
-//       return resolve(window.axios);
-//     };
-//     ref.appendChild(jqr, ref);
-//   })
-// })()
-
 /**
  * Define LienHeApi class
  */
 class LienHeApi {
   static getLienHe(params = {}) {
-    return axios.get("http://localhost:8000/api/lien-he", { params });
+    return axios.get("/api/lien-he", { params });
   }
 }
 
 class TaiLieuCongDongApi {
   static getAll(params = {}) {
     // Use params to send query parameters to the API endpoint
-    return axios.get("http://127.0.0.1:8000/api/tailieucongdong", { params });
+    return axios.get("/api/tailieucongdong", { params });
   }
 }
 
@@ -99,7 +83,7 @@ document.querySelector("button.find").addEventListener("click", function (e) {
 // NguoiDungapi class to handle login
 class NguoiDungapi {
   static login(params) {
-    return axios.post("http://127.0.0.1:8000/api/NguoiDung/login", params);
+    return axios.post("/api/NguoiDung/login", params);
   }
 }
 
@@ -146,7 +130,7 @@ class NguoiDungapi {
 
 class MenteeApi {
   static getAll() {
-    return axios.get("http://127.0.0.1:8000/api/mentee");
+    return axios.get("/api/mentee");
   }
 }
 
