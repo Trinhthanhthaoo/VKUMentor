@@ -245,7 +245,7 @@ body {
 .center {
   text-align: center;
 }
-@media (max-width: 992px) {
+@media (max-width: 1026px) {
   .navbar .links {
     display: none;
   }

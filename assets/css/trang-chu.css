@@ -162,7 +162,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
-@media (max-width: 992px) {
+@media (max-width: 1026px) {
   .navbar .links {
     display: none;
   }
@@ -1428,15 +1428,11 @@ img {
   background-color: #eee;
 }
 .acvtivity--content {
-  padding: 64px;
-
-}
-.acvtivity--content {
     display: flex;
     flex-direction: column;
     padding: 8px;
     overflow: hidden;
-    margin-left: 50px;
+    margin: 16px;
     text-align: justify;
 }
 
