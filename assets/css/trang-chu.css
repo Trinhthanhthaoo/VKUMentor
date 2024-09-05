@@ -76,7 +76,10 @@ body {
   font-size: 1rem !important;
   cursor: pointer;
   transition: scale 0.2 ease;
-  margin-right: 32px;
+  
+  margin-top: 20px;
+  position: relative ;
+  top: 10px;
 }
 
 .action_btn:hover {
@@ -107,6 +110,26 @@ body {
   opacity: 0.8;
 }
 .action_btn2:active {
+  scale: 0.95;
+}
+.action_btn3 {
+  background-image: linear-gradient(180deg, rgb(22, 167, 239), rgb(148, 45, 212));
+  color: whitesmoke !important;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem !important;
+  cursor: pointer;
+  transition: scale 0.2s ease;
+}
+
+.action_btn3:hover {
+  scale: 1.05;
+  opacity: 0.8;
+}
+
+.action_btn3:active {
   scale: 0.95;
 }
 .dropdown_menu {
