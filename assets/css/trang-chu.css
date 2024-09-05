@@ -1459,8 +1459,7 @@ img {
     text-align: justify;
 }
 
-.acvtivity--content img {
-}
+.acvtivity--content img {}
 .acvtivity--content__title {
   margin-top: 8px;
 }
