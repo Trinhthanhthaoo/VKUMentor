@@ -1,72 +1,69 @@
-// ;(function () {
-//   return new Promise((resolve) => {
-//     if (window.axios) {
-//       return resolve(window.axios);
-//     }
-//     var d = document, jqr, ref = d.getElementsByTagName('body')[0];
-//     jqr = d.createElement('script');
-//     jqr.async = true;
-//     jqr.src = 'https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js';
-//     jqr.onload = function() {
-//       return resolve(window.axios);
-//     };
-//     ref.appendChild(jqr, ref);
-//   })
-// })()
-
 /**
  * Define LienHeApi class
  */
 class LienHeApi {
   static getLienHe(params = {}) {
-    return axios.get("http://localhost:8000/api/lien-he", { params });
+    return axios.get("/api/lien-he", { params });
   }
 }
 
 class TaiLieuCongDongApi {
-  static getAll() {
-    return axios.get("http://127.0.0.1:8000/api/tailieucongdong");
+  static getAll(params = {}) {
+    // Use params to send query parameters to the API endpoint
+    return axios.get("/api/tailieucongdong", { params });
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  TaiLieuCongDongApi.getAll().then((res) => {
-    let data = res.data.data;
+  const searchButton = document.querySelector(".find"); // Button element
+  const inputName = document.querySelector(".EnterName"); // Input field for name
+  const selectKhoa = document.querySelector(".Khoa"); // Select field for Khoa
+  const selectNganh = document.querySelector(".Ngành"); // Select field for Ngành
+  const selectMon = document.querySelector(".Môn"); // Select field for Môn
 
-    console.log(data);
+  const testFillCard = document.querySelector(".card-container"); // Container to display cards
 
-    const testFillCard = document.querySelector(".card-container");
-    console.log("testFillCard: ", testFillCard);
+  searchButton.addEventListener("click", () => {
+    // Get input values
+    const keyword = inputName.value;
+    const khoa = selectKhoa.value;
+    const nganh = selectNganh.value;
+    const mon = selectMon.value;
 
-    
-    let html = ""
+    // Prepare parameters to be sent to the API
+    const params = {};
+    if (keyword) params.keyword = keyword;
+    if (khoa && khoa !== "Khoa") params.khoa = khoa;
+    if (nganh && nganh !== "Ngành") params.nganh = nganh;
+    if (mon && mon !== "Môn") params.mon = mon;
 
-    for(let item of data) {
-      console.log("ThanhThao item: ", item);
+    // Make API call with the parameters
+    TaiLieuCongDongApi.getAll(params).then((res) => {
+      let data = res.data.data; // Get data from response
 
-      let arrDate = item["NgayTao"].split("T")
+      let html = "";
 
-      console.log("ThanhThao arrDate: ", arrDate);
+      for (let item of data) {
+        let arrDate = item["NgayTao"].split("T");
 
+        html += `<div class="card">
+                    <img src="/assets/img/${item.HinhAnh}" alt="Delicious Food">
+                    <div class="card-content">
+                        <h2>${item.TieuDe}</h2>
+                        <p>${item.NoiDung}</p>
+                        <div style="display: flex; align-items: center; flex-direction: row-reverse; justify-content: space-between; margin-top: 5px;">
+                          <a href="#">KinhNguyen <i class="fa-solid fa-user"></i></a>
+                          <span>${arrDate[0]}</span>
+                        </div>
+                    </div>
+                </div>`;
+      }
 
-      html += `                 <div class="card">
-                                    <img src="/assets/img/${item.HinhAnh}" alt="Delicious Food">
-                                    <div class="card-content">
-                                        <h2>${item.TieuDe}</h2>
-                                        <p>${item.NoiDung}</p>
-                                        <div style="display: flex; align-items: center; flex-direction: row-reverse; justify-content: space-between; margin-top: 5px;">
-                                          <a href="#">KinhNguyen <i class="fa-solid fa-user"></i></a>
-                                          <span>${arrDate[0]}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                 
-                                `
-    }
-
-    testFillCard.innerHTML = html
+      testFillCard.innerHTML = html; // Update the HTML of the container with the new cards
+    });
   });
 });
+
 
 /**
  * Listen click event on button with class "find" to call API
@@ -86,7 +83,7 @@ document.querySelector("button.find").addEventListener("click", function (e) {
 // NguoiDungapi class to handle login
 class NguoiDungapi {
   static login(params) {
-    return axios.post("http://127.0.0.1:8000/api/NguoiDung/login", params);
+    return axios.post("/api/NguoiDung/login", params);
   }
 }
 
@@ -133,7 +130,7 @@ class NguoiDungapi {
 
 class MenteeApi {
   static getAll() {
-    return axios.get("http://127.0.0.1:8000/api/mentee");
+    return axios.get("/api/mentee");
   }
 }
 

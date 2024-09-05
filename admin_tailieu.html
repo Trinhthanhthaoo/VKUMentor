@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <title>VKUMentor Admin</title>
+    <link rel="stylesheet" href="assets/css/admin_tailieu.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="menu-toggle" />
+    <div class="sidebar">
+      <div class="side-header">
+        <h3>VKU<span> Mentor</span></h3>
+      </div>
+
+      <div class="side-content">
+        <div class="profile">
+          <div
+            class="profile-img bg-img"
+            style="background-image: url(/assets/img/NQK-Bg.jpg)"
+          ></div>
+          <h4>Nguyễn Quang Kính</h4>
+        </div>
+
+        <div class="side-menu">
+          <ul>
+            <li>
+              <a href="/admin.html">
+                <span class="las la-home"></span>
+                <small>Bảng điều khiểu</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_mentor.html">
+                <span class="las la-user-alt"></span>
+                <small>Mentor</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_mentee.html">
+                <span class="las la-user-alt"></span>
+                <small>Mentee</small>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <span class="las la-clipboard-list"></span>
+                <small>Tài liệu</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_cuocthi.html">
+                <span class="las la-trophy"></span>
+                <small>Cuộc thi</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_slider.html">
+                <span class="las la-image"></span>
+                <small>Slider</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_danhgia.html">
+                <span class="las la-comment-alt"></span>
+                <small>Đánh giá</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_hoptac.html">
+                <span class="las la-handshake"></span>
+                <small>Đối tác</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_cauhoi.html">
+                <span class="las la-comment-dots"></span>
+                <small>Câu hỏi</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <div class="header-content">
+          <label for="menu-toggle">
+            <span class="las la-bars"></span>
+          </label>
+
+          <div class="header-menu">
+            <div class="notify-icon">
+              <span class="las la-bell"></span>
+              <span class="notify">3</span>
+            </div>
+
+            <div class="user">
+              <div
+                class="bg-img"
+                style="background-image: url(assets/img/NQK-Bg.jpg)"
+              ></div>
+
+              <span class="las la-power-off"></span>
+              <span>Logout</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <h1>Tài liệu học tập</h1>
+        </div>
+
+        <div class="page-content">
+          <!-- <div class="analytics">
+            <div class="card">
+              <div class="card-head">
+                <h2>107,200</h2>
+                <span class="las la-user-friends"></span>
+              </div>
+              <div class="card-progress">
+                <small>User activity this month</small>
+                <div class="card-indicator">
+                  <div class="indicator one" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h2>340,230</h2>
+                <span class="las la-eye"></span>
+              </div>
+              <div class="card-progress">
+                <small>Page views</small>
+                <div class="card-indicator">
+                  <div class="indicator two" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h2>$653,200</h2>
+                <span class="las la-shopping-cart"></span>
+              </div>
+              <div class="card-progress">
+                <small>Monthly revenue growth</small>
+                <div class="card-indicator">
+                  <div class="indicator three" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+
+                <div class="card">
+              <div class="card-head">
+                <h2>47,500</h2>
+                <span class="las la-envelope"></span>
+              </div>
+              <div class="card-progress">
+                <small>New E-mails received</small>
+                <div class="card-indicator">
+                  <div class="indicator four" style="width: 90%"></div>
+                </div>
+              </div>
+            </div> 
+          </div> -->
+
+          <div class="records table-responsive">
+            <div class="record-header">
+              <div class="browse">
+                <input
+                  type="search"
+                  placeholder="Họ và tên"
+                  class="record-search"
+                />
+                <select name="" id="">
+                  <option value="">Mentor</option>
+                  <option value="">Mentee</option>
+                </select>
+                <input class="timkiem" type="button" value="Tìm kiếm" />
+              </div>
+            </div>
+
+            <div>
+              <table width="100%">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>HỌ VÀ TÊN</th>
+                    <th>TIÊU ĐỀ</th>
+                    <th>NỘI DUNG</th>
+                    <th>NGÀY TẠO</th>
+                    <th>TRẠNG THÁI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Nguyễn Quang Kính</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>C++ cơ bản</td>
+                    <td>
+                      Cung cấp hướng dẫn chi tiết về ngôn ngữ lập trình này và
+                      các nguyên tắc thiết kế phần mềm.
+                    </td>
+                    <td>19 April, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Phạm Quốc Việt</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Lập trình với Python</td>
+                    <td>
+                      Cung cấp kiến thức cơ bản và ứng dụng đa dạng của ngôn ngữ
+                      lập trình này.
+                    </td>
+                    <td>19 January, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Trịnh Thị Thanh Thảo</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Kinh tế vĩ mô</td>
+                    <td>
+                      Cung cấp cái nhìn tổng quan, đưa ra những thông tin mới và
+                      sâu sắc về hệ thống kinh tế toàn cầu.
+                    </td>
+                    <td>19 May, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Huỳnh Đức Nhật</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Cơ sở dữ liệu</td>
+                    <td>
+                      Hiểu và áp dụng ngôn ngữ truy vấn cơ sở dữ liệu để tương
+                      tác, truy xuất và quản lý dữ liệu hiệu quả.
+                    </td>
+                    <td>1 April, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Phạm Quốc Việt</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Tiếng Anhn</td>
+                    <td>TA1, TA2, TA3, TANC1, TANC2, TACN1, TACN2.</td>
+                    <td>19 October, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Nguyễn Quang Kính</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>C#</td>
+                    <td>
+                      Ngôn ngữ lập trình C# và cách phát triển ứng dụng sử dụng
+                      nó.
+                    </td>
+                    <td>26 April, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Huỳnh Đức Nhật</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Luật Kinh tế</td>
+                    <td>
+                      Nguyên lý pháp lý trong lĩnh vực kinh tế, hợp đồng, cạnh
+                      tranh, chính sách.
+                    </td>
+                    <td>9 April, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>Trịnh Thị Thanh Thảo</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>GT1, GT2, ĐSTT, TRR, XSTK</td>
+                    <td>Toán học và những điều thú vị về nó.</td>
+                    <td>5 April, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-check"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

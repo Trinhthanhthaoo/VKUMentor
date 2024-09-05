@@ -228,91 +228,170 @@ let removeFileButton = document.querySelector(".remove-file-icon");
 let uploadButton = document.querySelector(".upload-button");
 let fileFlag = 0;
 
-fileInput.addEventListener("click", () => {
-	fileInput.value = '';
-	console.log(fileInput.value);
+;(function () {
+  if (!fileInput || !uploadButton) {
+    return;
+  }
+
+  fileInput.addEventListener("click", () => {
+    fileInput.value = '';
+    console.log(fileInput.value);
+  });
+
+  fileInput.addEventListener("change", e => {
+    console.log(" > " + fileInput.value)
+    uploadIcon.innerHTML = 'check_circle';
+    dragDropText.innerHTML = 'File Dropped Successfully!';
+    document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: 0;"> browse file</span></span>`;
+    uploadButton.innerHTML = `Upload`;
+    fileName.innerHTML = fileInput.files[0].name;
+    fileSize.innerHTML = (fileInput.files[0].size/1024).toFixed(1) + " KB";
+    uploadedFile.style.cssText = "display: flex;";
+    progressBar.style.width = 0;
+    fileFlag = 0;
+  });
+
+  uploadButton.addEventListener("click", () => {
+    let isFileUploaded = fileInput.value;
+    if(isFileUploaded != '') {
+      if (fileFlag == 0) {
+          fileFlag = 1;
+          var width = 0;
+          var id = setInterval(frame, 50);
+          function frame() {
+              if (width >= 390) {
+                clearInterval(id);
+            uploadButton.innerHTML = `<span class="material-icons-outlined upload-button-icon"> check_circle </span> Uploaded`;
+              } else {
+                width += 5;
+                progressBar.style.width = width + "px";
+              }
+          }
+        }
+    } else {
+      cannotUploadMessage.style.cssText = "display: flex; animation: fadeIn linear 1.5s;";
+    }
+  });
+
+  cancelAlertButton.addEventListener("click", () => {
+    cannotUploadMessage.style.cssText = "display: none;";
+  });
+
+  if(isAdvancedUpload) {
+    ["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"].forEach( evt => 
+      draggableFileArea.addEventListener(evt, e => {
+        e.preventDefault();
+        e.stopPropagation();
+      })
+    );
+
+    ["dragover", "dragenter"].forEach( evt => {
+      draggableFileArea.addEventListener(evt, e => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadIcon.innerHTML = 'file_download';
+        dragDropText.innerHTML = 'Drop your file here!';
+      });
+    });
+
+    draggableFileArea.addEventListener("drop", e => {
+      uploadIcon.innerHTML = 'check_circle';
+      dragDropText.innerHTML = 'File Dropped Successfully!';
+      document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: -23px; left: -20px;"> browse file</span> </span>`;
+      uploadButton.innerHTML = `Upload`;
+      
+      let files = e.dataTransfer.files;
+      fileInput.files = files;
+      console.log(files[0].name + " " + files[0].size);
+      console.log(document.querySelector(".default-file-input").value);
+      fileName.innerHTML = files[0].name;
+      fileSize.innerHTML = (files[0].size/1024).toFixed(1) + " KB";
+      uploadedFile.style.cssText = "display: flex;";
+      progressBar.style.width = 0;
+      fileFlag = 0;
+    });
+  }
+
+  removeFileButton.addEventListener("click", () => {
+    uploadedFile.style.cssText = "display: none;";
+    fileInput.value = '';
+    uploadIcon.innerHTML = 'file_upload';
+    dragDropText.innerHTML = 'Drag & drop any file here';
+    document.querySelector(".label").innerHTML = `or <span class="browse-files"> <input type="file" class="default-file-input"/> <span class="browse-files-text">browse file</span> <span>from device</span> </span>`;
+    uploadButton.innerHTML = `Upload`;
+  });
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user) {
+      document.getElementById('action_btn').style.display = 'none';
+      document.getElementById('userIcon').style.display = 'block';
+  }
 });
 
-fileInput.addEventListener("change", e => {
-	console.log(" > " + fileInput.value)
-	uploadIcon.innerHTML = 'check_circle';
-	dragDropText.innerHTML = 'File Dropped Successfully!';
-	document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: 0;"> browse file</span></span>`;
-	uploadButton.innerHTML = `Upload`;
-	fileName.innerHTML = fileInput.files[0].name;
-	fileSize.innerHTML = (fileInput.files[0].size/1024).toFixed(1) + " KB";
-	uploadedFile.style.cssText = "display: flex;";
-	progressBar.style.width = 0;
-	fileFlag = 0;
+document.addEventListener("DOMContentLoaded", function() {
+  const token = localStorage.getItem('token');  // Lưu token vào localStorage sau khi đăng nhập
+  console.log({token})
+  const actionBtn = document.getElementById('action_btn');
+  const actionBtn2 = document.getElementById('action_btn2');
+  if (!token) {
+      return;  // Nếu không có token, không làm gì cả
+  }
+
+  axios.get('/api/auth/user')
+  .then(({ data: user }) => {
+          if (user && (user.TenDangNhap || user.Email)) {
+          if (actionBtn) {
+            actionBtn.style.display = 'none';
+          }
+          
+          if (actionBtn2) {
+            actionBtn2.style.display = 'none';
+          }
+          const userNameElement = document.getElementById('user_name');
+          const userNameElement1 = document.getElementById('user_name1');
+          userNameElement.textContent = user.TenDangNhap || user.Email;  // Sử dụng tên đăng nhập hoặc email
+          userNameElement.style.display = 'inline-block';
+          userNameElement1.textContent = user.TenDangNhap || user.Email;  // Sử dụng tên đăng nhập hoặc email
+          userNameElement1.style.display = 'inline-block';
+      }
+  })
+  .catch(error => console.log('Error:', error));
 });
 
-uploadButton.addEventListener("click", () => {
-	let isFileUploaded = fileInput.value;
-	if(isFileUploaded != '') {
-		if (fileFlag == 0) {
-    		fileFlag = 1;
-    		var width = 0;
-    		var id = setInterval(frame, 50);
-    		function frame() {
-      			if (width >= 390) {
-        			clearInterval(id);
-					uploadButton.innerHTML = `<span class="material-icons-outlined upload-button-icon"> check_circle </span> Uploaded`;
-      			} else {
-        			width += 5;
-        			progressBar.style.width = width + "px";
-      			}
-    		}
-  		}
-	} else {
-		cannotUploadMessage.style.cssText = "display: flex; animation: fadeIn linear 1.5s;";
-	}
+// Đăng xuất
+document.addEventListener("DOMContentLoaded", function() {
+  const token = localStorage.getItem('token');
+  console.log({token})
+  const logout = document.getElementById('logout1');
+  if (!token) {
+      return;
+  }
+
+  axios.get('/api/auth/user')
+  .then(({ data: user }) => {
+      if (user) {
+          document.getElementById('action_btn').style.display = 'none';
+          const userNameElement = document.getElementById('user_name');
+          userNameElement.textContent = user.TenDangNhap || user.Email;
+          userNameElement.style.display = 'inline-block';
+          document.getElementById('logout').style.display = 'block';
+
+          // Thêm sự kiện cho các nút
+          document.getElementById('logout').addEventListener('click', function(event) {
+            event.preventDefault();
+              localStorage.removeItem('token');  
+              localStorage.removeItem('user');   
+              window.location.href = './index.html';  
+          });
+          document.getElementById('logout1').addEventListener('click', function(event) {
+            event.preventDefault();
+              localStorage.removeItem('token'); 
+              localStorage.removeItem('user');  
+              window.location.href = './index.html'; 
+          });
+      }
+  })
+  .catch(error => console.log('Error:', error));
 });
-
-cancelAlertButton.addEventListener("click", () => {
-	cannotUploadMessage.style.cssText = "display: none;";
-});
-
-if(isAdvancedUpload) {
-	["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"].forEach( evt => 
-		draggableFileArea.addEventListener(evt, e => {
-			e.preventDefault();
-			e.stopPropagation();
-		})
-	);
-
-	["dragover", "dragenter"].forEach( evt => {
-		draggableFileArea.addEventListener(evt, e => {
-			e.preventDefault();
-			e.stopPropagation();
-			uploadIcon.innerHTML = 'file_download';
-			dragDropText.innerHTML = 'Drop your file here!';
-		});
-	});
-
-	draggableFileArea.addEventListener("drop", e => {
-		uploadIcon.innerHTML = 'check_circle';
-		dragDropText.innerHTML = 'File Dropped Successfully!';
-		document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: -23px; left: -20px;"> browse file</span> </span>`;
-		uploadButton.innerHTML = `Upload`;
-		
-		let files = e.dataTransfer.files;
-		fileInput.files = files;
-		console.log(files[0].name + " " + files[0].size);
-		console.log(document.querySelector(".default-file-input").value);
-		fileName.innerHTML = files[0].name;
-		fileSize.innerHTML = (files[0].size/1024).toFixed(1) + " KB";
-		uploadedFile.style.cssText = "display: flex;";
-		progressBar.style.width = 0;
-		fileFlag = 0;
-	});
-}
-
-removeFileButton.addEventListener("click", () => {
-	uploadedFile.style.cssText = "display: none;";
-	fileInput.value = '';
-	uploadIcon.innerHTML = 'file_upload';
-	dragDropText.innerHTML = 'Drag & drop any file here';
-	document.querySelector(".label").innerHTML = `or <span class="browse-files"> <input type="file" class="default-file-input"/> <span class="browse-files-text">browse file</span> <span>from device</span> </span>`;
-	uploadButton.innerHTML = `Upload`;
-});
-
