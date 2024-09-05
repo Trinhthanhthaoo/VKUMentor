@@ -70,20 +70,21 @@
               ><img class="logo__icon" src="/assets/img/logo.png" alt=""
             /></a>
           </div>
-          <h2 class="title">Sign up</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="text" placeholder="Email" />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
-          </div>
-          <input type="submit" value="Sign up" class="btn" />
+         <!-- Sign Up Form -->
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="txtSignupUsername" name="txtSignupUsername" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="text" id="txtSignupEmail" name="txtSignupEmail" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="txtSignupPassword" name="txtSignupPassword" placeholder="Password" />
+            </div>
+            <input type="button" id="btnSignUp" value="Sign up" class="btn" />
           <p class="social-text">Or Sign in with social platform</p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -140,6 +141,7 @@
     <script src="/Javascript/app.js"></script>
     <!-- <script src="/Javascript/api.js"></script> -->
     <script src="/Javascript/api/login.js"></script>
+     <script src="/Javascript/api/register.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   </body>
 </html>

@@ -24,49 +24,62 @@ class LienHeApi {
 }
 
 class TaiLieuCongDongApi {
-  static getAll() {
-    return axios.get("http://127.0.0.1:8000/api/tailieucongdong");
+  static getAll(params = {}) {
+    // Use params to send query parameters to the API endpoint
+    return axios.get("http://127.0.0.1:8000/api/tailieucongdong", { params });
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  TaiLieuCongDongApi.getAll().then((res) => {
-    let data = res.data.data;
+  const searchButton = document.querySelector(".find"); // Button element
+  const inputName = document.querySelector(".EnterName"); // Input field for name
+  const selectKhoa = document.querySelector(".Khoa"); // Select field for Khoa
+  const selectNganh = document.querySelector(".Ngành"); // Select field for Ngành
+  const selectMon = document.querySelector(".Môn"); // Select field for Môn
 
-    console.log(data);
+  const testFillCard = document.querySelector(".card-container"); // Container to display cards
 
-    const testFillCard = document.querySelector(".card-container");
-    console.log("testFillCard: ", testFillCard);
+  searchButton.addEventListener("click", () => {
+    // Get input values
+    const keyword = inputName.value;
+    const khoa = selectKhoa.value;
+    const nganh = selectNganh.value;
+    const mon = selectMon.value;
 
-    
-    let html = ""
+    // Prepare parameters to be sent to the API
+    const params = {};
+    if (keyword) params.keyword = keyword;
+    if (khoa && khoa !== "Khoa") params.khoa = khoa;
+    if (nganh && nganh !== "Ngành") params.nganh = nganh;
+    if (mon && mon !== "Môn") params.mon = mon;
 
-    for(let item of data) {
-      console.log("ThanhThao item: ", item);
+    // Make API call with the parameters
+    TaiLieuCongDongApi.getAll(params).then((res) => {
+      let data = res.data.data; // Get data from response
 
-      let arrDate = item["NgayTao"].split("T")
+      let html = "";
 
-      console.log("ThanhThao arrDate: ", arrDate);
+      for (let item of data) {
+        let arrDate = item["NgayTao"].split("T");
 
+        html += `<div class="card">
+                    <img src="/assets/img/${item.HinhAnh}" alt="Delicious Food">
+                    <div class="card-content">
+                        <h2>${item.TieuDe}</h2>
+                        <p>${item.NoiDung}</p>
+                        <div style="display: flex; align-items: center; flex-direction: row-reverse; justify-content: space-between; margin-top: 5px;">
+                          <a href="#">KinhNguyen <i class="fa-solid fa-user"></i></a>
+                          <span>${arrDate[0]}</span>
+                        </div>
+                    </div>
+                </div>`;
+      }
 
-      html += `                 <div class="card">
-                                    <img src="/assets/img/${item.HinhAnh}" alt="Delicious Food">
-                                    <div class="card-content">
-                                        <h2>${item.TieuDe}</h2>
-                                        <p>${item.NoiDung}</p>
-                                        <div style="display: flex; align-items: center; flex-direction: row-reverse; justify-content: space-between; margin-top: 5px;">
-                                          <a href="#">KinhNguyen <i class="fa-solid fa-user"></i></a>
-                                          <span>${arrDate[0]}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                 
-                                `
-    }
-
-    testFillCard.innerHTML = html
+      testFillCard.innerHTML = html; // Update the HTML of the container with the new cards
+    });
   });
 });
+
 
 /**
  * Listen click event on button with class "find" to call API

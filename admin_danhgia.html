@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <title>VKUMentor Admin</title>
+    <link rel="stylesheet" href="assets/css/admin_tailieu.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="menu-toggle" />
+    <div class="sidebar">
+      <div class="side-header">
+        <h3>VKU<span> Mentor</span></h3>
+      </div>
+
+      <div class="side-content">
+        <div class="profile">
+          <div
+            class="profile-img bg-img"
+            style="background-image: url(/assets/img/NQK-Bg.jpg)"
+          ></div>
+          <h4>Nguyễn Quang Kính</h4>
+        </div>
+
+        <div class="side-menu">
+          <ul>
+            <li>
+              <a href="/admin.html">
+                <span class="las la-home"></span>
+                <small>Bảng điều khiểu</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_mentor.html">
+                <span class="las la-user-alt"></span>
+                <small>Mentor</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_mentee.html">
+                <span class="las la-user-alt"></span>
+                <small>Mentee</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_tailieu.html">
+                <span class="las la-clipboard-list"></span>
+                <small>Tài liệu</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_cuocthi.html">
+                <span class="las la-trophy"></span>
+                <small>Cuộc thi</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_slider.html">
+                <span class="las la-image"></span>
+                <small>Slider</small>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <span class="las la-comment-alt"></span>
+                <small>Đánh giá</small>
+              </a>
+            </li>
+            <li>
+              <a href="/admin_hoptac.html">
+                <span class="las la-handshake"></span>
+                <small>Đối tác</small>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="las la-comment-dots"></span>
+                <small>Đánh giá của Mentee</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <div class="header-content">
+          <label for="menu-toggle">
+            <span class="las la-bars"></span>
+          </label>
+
+          <div class="header-menu">
+            <div class="notify-icon">
+              <span class="las la-bell"></span>
+              <span class="notify">3</span>
+            </div>
+
+            <div class="user">
+              <div
+                class="bg-img"
+                style="background-image: url(assets/img/NQK-Bg.jpg)"
+              ></div>
+
+              <span class="las la-power-off"></span>
+              <span>Logout</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <h1>Đánh giá của Mentee</h1>
+        </div>
+
+        <div class="page-content">
+          <!-- <div class="analytics">
+            <div class="card">
+              <div class="card-head">
+                <h2>107,200</h2>
+                <span class="las la-user-friends"></span>
+              </div>
+              <div class="card-progress">
+                <small>User activity this month</small>
+                <div class="card-indicator">
+                  <div class="indicator one" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h2>340,230</h2>
+                <span class="las la-eye"></span>
+              </div>
+              <div class="card-progress">
+                <small>Page views</small>
+                <div class="card-indicator">
+                  <div class="indicator two" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h2>$653,200</h2>
+                <span class="las la-shopping-cart"></span>
+              </div>
+              <div class="card-progress">
+                <small>Monthly revenue growth</small>
+                <div class="card-indicator">
+                  <div class="indicator three" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+
+                <div class="card">
+              <div class="card-head">
+                <h2>47,500</h2>
+                <span class="las la-envelope"></span>
+              </div>
+              <div class="card-progress">
+                <small>New E-mails received</small>
+                <div class="card-indicator">
+                  <div class="indicator four" style="width: 90%"></div>
+                </div>
+              </div>
+            </div> 
+          </div> -->
+
+          <div class="records table-responsive">
+            <div class="record-header">
+              <div class="browse">
+                <input
+                  type="search"
+                  placeholder="Họ và tên"
+                  class="record-search"
+                />
+                <select name="" id="">
+                  <option value="">Mentor</option>
+                  <option value="">Mentee</option>
+                </select>
+                <input class="timkiem" type="button" value="Tìm kiếm" />
+              </div>
+            </div>
+
+            <div>
+              <table width="100%">
+                <thead>
+                  <tr>
+                    <th>ID Mentee</th>
+                    <th>ID Mentor</th>
+                    <th>ĐIỂM</th>
+                    <th>BÌNH LUẬN</th>
+                    <th>NGÀY ĐÁNH GIÁ</th>
+                    <th>TRẠNG THÁI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>132</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                      Mentor rất nhiệt tình và luôn sẵn sàng hỗ trợ tôi khi cần.
+                      Tôi đã học được rất nhiều điều bổ ích.
+                    </td>
+                    <td>8 November, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>67</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>9</td>
+                    <td>
+                      Dịch vụ mentor thật sự giúp tôi tự tin hơn trong công
+                      việc. Cảm ơn sự hướng dẫn tận tâm từ mentor.
+                    </td>
+                    <td>28 May, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>14</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>8</td>
+                    <td>
+                      Mentor có kiến thức sâu rộng và luôn đưa ra những lời
+                      khuyên thực tế. Tôi cảm thấy mình đã phát triển rất nhiều.
+                    </td>
+                    <td>19 May, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>44</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>1</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>9</td>
+                    <td>
+                      Tôi rất ấn tượng với sự kiên nhẫn và chuyên nghiệp của
+                      mentor. Dịch vụ đáng giá từng đồng!
+                    </td>
+                    <td>1 April, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>55</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>22</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                      Mentor đã giúp tôi nhìn nhận vấn đề từ nhiều góc độ khác
+                      nhau. Cảm ơn mentor vì đã truyền cảm hứng cho tôi.
+                    </td>
+                    <td>17 May, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>99</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>8</td>
+                    <td>
+                      Rất hài lòng với dịch vụ mentor. Mentor luôn tạo động lực
+                      và đưa ra những gợi ý cụ thể giúp tôi cải thiện kỹ năng.
+                    </td>
+                    <td>2 May, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>24</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                      Sự hỗ trợ từ mentor thật tuyệt vời. Tôi đã có thêm nhiều ý
+                      tưởng mới và cách tiếp cận công việc hiệu quả hơn.
+                    </td>
+                    <td>9 April, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-info">
+                          <h4>1</h4>
+                        </div>
+                      </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                      "Mentor rất am hiểu lĩnh vực mà tôi đang theo đuổi và luôn
+                      đưa ra những hướng dẫn cụ thể, giúp tôi tiến bộ rõ rệt.
+                    </td>
+                    <td>25 May, 2024</td>
+                    <td>
+                      <div class="actions">
+                        <span>
+                          <button class="buttonBox">
+                            <i class="las la-wrench"></i>
+                          </button>
+                        </span>
+                        <span>
+                          <button class="buttonBox wrong">
+                            <i class="las la-times"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
