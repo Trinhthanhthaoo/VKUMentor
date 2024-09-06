@@ -1,15 +1,15 @@
 // header 
 
-const  toggleBtn = document.querySelector('.toggle_btn')
-const  toggleBtnIcon = document.querySelector('.toggle_btn i')
+const toggleBtn = document.querySelector('.toggle_btn')
+const toggleBtnIcon = document.querySelector('.toggle_btn i')
 const dropMenu = document.querySelector('.dropdown_menu')
-toggleBtn.onclick= function(){
-    dropMenu.classList.toggle('open')
-    const isOpen = dropMenu.classList.contains('open')
+toggleBtn.onclick = function () {
+  dropMenu.classList.toggle('open')
+  const isOpen = dropMenu.classList.contains('open')
 
-    toggleBtnIcon.classList=isOpen
-    ?'fa-solid fa-xmark'
-    :'fa-solid fa-bars'
+  toggleBtnIcon.classList = isOpen
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars'
 }
 
 // slider  
@@ -44,43 +44,46 @@ function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
+  if (!x?.length || !dots?.length) return;
+  if (n > x.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = x.length }
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" w3-white", "");
   }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
-  
+  x[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " w3-white";
+
   myStopFunction();
   myFunction();
 }
 
 function carousel() {
-  var dots = document.getElementsByClassName("demo");
   var i;
   var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (!x?.length || !dots?.length) return;
+
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  
+
   slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1} 
-  x[slideIndex-1].style.display = "block";
- 
+  if (slideIndex > x.length) { slideIndex = 1 }
+  x[slideIndex - 1].style.display = "block";
+
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" w3-white", "");
   }
-  
-  dots[slideIndex-1].className += " w3-white";
-  
+
+  dots[slideIndex - 1].className += " w3-white";
+
   myStopFunction();
   myFunction();
-  
-  
+
+
 }
 
 let lightImg = document.querySelector(".light-img");
@@ -95,75 +98,43 @@ viewBtn.forEach(el => {
 });
 
 window.addEventListener("click", event => {
-  if(event.target.className == "box-wrapper" || event.target.className == "close-btn") {
+  if (event.target.className == "box-wrapper" || event.target.className == "close-btn") {
     document.body.classList.remove("effect");
   }
 })
-const arrow_right=document.querySelector("#arrow-right")
-const arrow_left=document.querySelector("#arrow-left")
-const slider=document.querySelector(".slider")
+const arrow_right = document.querySelector("#arrow-right")
+const arrow_left = document.querySelector("#arrow-left")
+const slider = document.querySelector(".slider")
 
-const width_slider= slider.scrollWidth
+const width_slider = slider?.scrollWidth
 const interval = 350
 
-
-
-
-function slide(event){
-
-    
-    const current_property_left_slider= parseInt(getComputedStyle(slider).left)
-
-
-    let new_pos_left_slider
-
-
-    if(event.currentTarget === arrow_right){
-
-
-        if(Math.abs(current_property_left_slider) + interval + slider.clientWidth >= slider.scrollWidth){
-
-            new_pos_left_slider= `-${slider.scrollWidth - slider.clientWidth}px`
-
-        }
-
-
-        else{
-
-            new_pos_left_slider= `${current_property_left_slider - interval}px`
-
-        }
-
-        slider.style.left= new_pos_left_slider
-
-        
+function slide(event) {
+  if (!slider) return;
+  let new_pos_left_slider
+  const current_property_left_slider = parseInt(getComputedStyle(slider).left)
+  if (event.currentTarget === arrow_right) {
+    if (Math.abs(current_property_left_slider) + interval + slider.clientWidth >= slider.scrollWidth) {
+      new_pos_left_slider = `-${slider.scrollWidth - slider.clientWidth}px`
     }
-
-
-
-    if(event.currentTarget === arrow_left){
-
-        new_pos_left_slider = current_property_left_slider + interval
-
-        if(new_pos_left_slider > 0){
-            
-            slider.style.left="0px"
-        }
-
-        else{
-
-            slider.style.left= `${new_pos_left_slider}px`
-
-        }
+    else {
+      new_pos_left_slider = `${current_property_left_slider - interval}px`
     }
+    slider.style.left = new_pos_left_slider
+  }
 
+  if (event.currentTarget === arrow_left) {
+    new_pos_left_slider = current_property_left_slider + interval
+    if (new_pos_left_slider > 0) {
+      slider.style.left = "0px"
+    } else {
+      slider.style.left = `${new_pos_left_slider}px`
+    }
+  }
 }
 
-
-
-
-arrow_left.addEventListener("click", slide)
-arrow_right.addEventListener("click", slide)
+arrow_left?.addEventListener("click", slide)
+arrow_right?.addEventListener("click", slide)
 
 // fomr dk 
 
@@ -175,22 +146,20 @@ var modal = document.getElementById("mentorModal");
 var btn = document.querySelectorAll(".DangKyMentor button");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-btn")[0];
+// When the user clicks on <span> (x), close the modal
+document.querySelector(".close-btn")?.addEventListener("click", function () {
+  modal.style.display = "none";
+});
 
 // When the user clicks the button, open the modal 
 btn.forEach(button => {
-  button.onclick = function() {
+  button.onclick = function () {
     modal.style.display = "block";
   }
 });
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
@@ -204,11 +173,11 @@ window.addEventListener("scroll", () => {
   } else {
     backTopBtn.classList.remove("active");
   }
-  
+
 });
 
 
-var isAdvancedUpload = function() {
+var isAdvancedUpload = function () {
   var div = document.createElement('div');
   return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
 }();
@@ -228,7 +197,7 @@ let removeFileButton = document.querySelector(".remove-file-icon");
 let uploadButton = document.querySelector(".upload-button");
 let fileFlag = 0;
 
-;(function () {
+; (function () {
   if (!fileInput || !uploadButton) {
     return;
   }
@@ -245,7 +214,7 @@ let fileFlag = 0;
     document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: 0;"> browse file</span></span>`;
     uploadButton.innerHTML = `Upload`;
     fileName.innerHTML = fileInput.files[0].name;
-    fileSize.innerHTML = (fileInput.files[0].size/1024).toFixed(1) + " KB";
+    fileSize.innerHTML = (fileInput.files[0].size / 1024).toFixed(1) + " KB";
     uploadedFile.style.cssText = "display: flex;";
     progressBar.style.width = 0;
     fileFlag = 0;
@@ -253,21 +222,21 @@ let fileFlag = 0;
 
   uploadButton.addEventListener("click", () => {
     let isFileUploaded = fileInput.value;
-    if(isFileUploaded != '') {
+    if (isFileUploaded != '') {
       if (fileFlag == 0) {
-          fileFlag = 1;
-          var width = 0;
-          var id = setInterval(frame, 50);
-          function frame() {
-              if (width >= 390) {
-                clearInterval(id);
+        fileFlag = 1;
+        var width = 0;
+        var id = setInterval(frame, 50);
+        function frame() {
+          if (width >= 390) {
+            clearInterval(id);
             uploadButton.innerHTML = `<span class="material-icons-outlined upload-button-icon"> check_circle </span> Uploaded`;
-              } else {
-                width += 5;
-                progressBar.style.width = width + "px";
-              }
+          } else {
+            width += 5;
+            progressBar.style.width = width + "px";
           }
         }
+      }
     } else {
       cannotUploadMessage.style.cssText = "display: flex; animation: fadeIn linear 1.5s;";
     }
@@ -277,15 +246,15 @@ let fileFlag = 0;
     cannotUploadMessage.style.cssText = "display: none;";
   });
 
-  if(isAdvancedUpload) {
-    ["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"].forEach( evt => 
+  if (isAdvancedUpload) {
+    ["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"].forEach(evt =>
       draggableFileArea.addEventListener(evt, e => {
         e.preventDefault();
         e.stopPropagation();
       })
     );
 
-    ["dragover", "dragenter"].forEach( evt => {
+    ["dragover", "dragenter"].forEach(evt => {
       draggableFileArea.addEventListener(evt, e => {
         e.preventDefault();
         e.stopPropagation();
@@ -299,13 +268,13 @@ let fileFlag = 0;
       dragDropText.innerHTML = 'File Dropped Successfully!';
       document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: -23px; left: -20px;"> browse file</span> </span>`;
       uploadButton.innerHTML = `Upload`;
-      
+
       let files = e.dataTransfer.files;
       fileInput.files = files;
       console.log(files[0].name + " " + files[0].size);
       console.log(document.querySelector(".default-file-input").value);
       fileName.innerHTML = files[0].name;
-      fileSize.innerHTML = (files[0].size/1024).toFixed(1) + " KB";
+      fileSize.innerHTML = (files[0].size / 1024).toFixed(1) + " KB";
       uploadedFile.style.cssText = "display: flex;";
       progressBar.style.width = 0;
       fileFlag = 0;
@@ -322,76 +291,76 @@ let fileFlag = 0;
   });
 })();
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const user = JSON.parse(localStorage.getItem('user'));
   if (user) {
-      document.getElementById('action_btn').style.display = 'none';
-      document.getElementById('userIcon').style.display = 'block';
+    document.getElementById('action_btn').style.display = 'none';
+    document.getElementById('userIcon').style.display = 'block';
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem('token');  // Lưu token vào localStorage sau khi đăng nhập
-  console.log({token})
+  console.log({ token })
   const actionBtn = document.getElementById('action_btn');
   const actionBtn2 = document.getElementById('action_btn2');
   if (!token) {
-      return;  // Nếu không có token, không làm gì cả
+    return;  // Nếu không có token, không làm gì cả
   }
 
   axios.get('/api/auth/user')
-  .then(({ data: user }) => {
-          if (user && (user.TenDangNhap || user.Email)) {
-          if (actionBtn) {
-            actionBtn.style.display = 'none';
-          }
-          
-          if (actionBtn2) {
-            actionBtn2.style.display = 'none';
-          }
-          const userNameElement = document.getElementById('user_name');
-          const userNameElement1 = document.getElementById('user_name1');
-          userNameElement.textContent = user.TenDangNhap || user.Email;  // Sử dụng tên đăng nhập hoặc email
-          userNameElement.style.display = 'inline-block';
-          userNameElement1.textContent = user.TenDangNhap || user.Email;  // Sử dụng tên đăng nhập hoặc email
-          userNameElement1.style.display = 'inline-block';
+    .then(({ data: user }) => {
+      if (user && (user.TenDangNhap || user.Email)) {
+        if (actionBtn) {
+          actionBtn.style.display = 'none';
+        }
+
+        if (actionBtn2) {
+          actionBtn2.style.display = 'none';
+        }
+        const userNameElement = document.getElementById('user_name');
+        const userNameElement1 = document.getElementById('user_name1');
+        userNameElement.textContent = user.TenDangNhap || user.Email;  // Sử dụng tên đăng nhập hoặc email
+        userNameElement.style.display = 'inline-block';
+        userNameElement1.textContent = user.TenDangNhap || user.Email;  // Sử dụng tên đăng nhập hoặc email
+        userNameElement1.style.display = 'inline-block';
       }
-  })
-  .catch(error => console.log('Error:', error));
+    })
+    .catch(error => console.log('Error:', error));
 });
 
 // Đăng xuất
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem('token');
-  console.log({token})
+  console.log({ token })
   const logout = document.getElementById('logout1');
   if (!token) {
-      return;
+    return;
   }
 
   axios.get('/api/auth/user')
-  .then(({ data: user }) => {
+    .then(({ data: user }) => {
       if (user) {
-          document.getElementById('action_btn').style.display = 'none';
-          const userNameElement = document.getElementById('user_name');
-          userNameElement.textContent = user.TenDangNhap || user.Email;
-          userNameElement.style.display = 'inline-block';
-          document.getElementById('logout').style.display = 'block';
+        document.getElementById('action_btn').style.display = 'none';
+        const userNameElement = document.getElementById('user_name');
+        userNameElement.textContent = user.TenDangNhap || user.Email;
+        userNameElement.style.display = 'inline-block';
+        document.getElementById('logout').style.display = 'block';
 
-          // Thêm sự kiện cho các nút
-          document.getElementById('logout').addEventListener('click', function(event) {
-            event.preventDefault();
-              localStorage.removeItem('token');  
-              localStorage.removeItem('user');   
-              window.location.href = './index.html';  
-          });
-          document.getElementById('logout1').addEventListener('click', function(event) {
-            event.preventDefault();
-              localStorage.removeItem('token'); 
-              localStorage.removeItem('user');  
-              window.location.href = './index.html'; 
-          });
+        // Thêm sự kiện cho các nút
+        document.getElementById('logout').addEventListener('click', function (event) {
+          event.preventDefault();
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          window.location.href = './index.html';
+        });
+        document.getElementById('logout1').addEventListener('click', function (event) {
+          event.preventDefault();
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          window.location.href = './index.html';
+        });
       }
-  })
-  .catch(error => console.log('Error:', error));
+    })
+    .catch(error => console.log('Error:', error));
 });
